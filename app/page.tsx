@@ -102,34 +102,86 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ─────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="bg-[#0a0a0a] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
           <div className="text-center mb-14">
-            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">What We Do</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Enterprise IT Services</h2>
-            <p className="mt-4 text-[#555555] max-w-xl mx-auto">
-              A full spectrum of technology solutions — from strategic AI consulting to day-to-day IT management.
+            <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.25em] mb-3">Commercial AI and Server Solutions</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Next-Generation Infrastructure</h2>
+            <p className="text-[#666666] text-sm max-w-xl mx-auto">
+              Next-generation AI systems and server platforms designed for private, secure, and high-performance operations.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <Link
-                key={service.id}
-                href={`/services#${service.id}`}
-                className="group bg-white border border-[#eeeeee] rounded-2xl p-7 card-hover"
-              >
-                <div className="w-11 h-11 bg-[#e87c5a]/10 rounded-xl flex items-center justify-center mb-5">
-                  <Icon name={service.iconName} className="w-5 h-5 text-[#e87c5a]" />
+
+          {/* Two product columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#222222] border border-[#222222] rounded-2xl overflow-hidden">
+
+            {/* Column 1 — Business Server */}
+            <div className="bg-[#0f0f0f] p-10 flex flex-col">
+              <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.2em] mb-6">Business Server Solutions</p>
+              <div className="space-y-5 flex-1">
+                {[
+                  { title: 'Built for Your Workload', body: 'Every server is spec\'d and assembled around your specific needs — whether that\'s file sharing, internal applications, hosted services, or heavy compute.' },
+                  { title: 'Secured Before It Leaves Our Hands', body: 'Firewall rules, access controls, and hardening are configured by our engineers before deployment. Your server arrives ready for business, not just powered on.' },
+                  { title: 'Run Multiple Environments on One Machine', body: 'Virtualisation lets you run isolated systems side-by-side — separate your dev, staging, and production environments without buying separate hardware.' },
+                  { title: 'Tower or Rack — Your Choice', body: 'We supply and configure both desktop tower and rack-mount form factors. Choose what fits your office or server room without compromise.' },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#e87c5a] mt-2 shrink-0" />
+                    <div>
+                      <p className="text-white text-sm font-semibold mb-0.5">{item.title}</p>
+                      <p className="text-[#666666] text-xs leading-relaxed">{item.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-[#222222] mt-8 pt-6 flex items-end justify-between gap-4">
+                <div>
+                  <p className="text-[#555555] text-xs mb-1">Starting at</p>
+                  <p className="text-white text-2xl font-extrabold">$1,999</p>
+                  <p className="text-[#555555] text-xs mt-1">Custom-built. Quoted before any work begins.</p>
                 </div>
-                <h3 className="text-[#1c1c1c] font-bold text-lg mb-2 group-hover:text-[#e87c5a] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-[#666666] text-sm leading-relaxed">{service.description}</p>
-              </Link>
-            ))}
+                <Link href="/contact" className="shrink-0 bg-[#e87c5a] hover:bg-[#d06848] text-white text-xs font-bold px-5 py-2.5 rounded-lg transition-colors uppercase tracking-wide">
+                  Get a Quote
+                </Link>
+              </div>
+            </div>
+
+            {/* Column 2 — On-Site AI */}
+            <div className="bg-[#0f0f0f] p-10 flex flex-col">
+              <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.2em] mb-6">On-Site AI Infrastructure</p>
+              <div className="space-y-5 flex-1">
+                {[
+                  { title: 'AI That Runs Inside Your Business', body: 'Stop sending sensitive prompts to third-party cloud models. We build and deploy local AI systems that run entirely on your hardware — your data never leaves your network.' },
+                  { title: 'Practical Performance at a Business Price', body: 'Configured for real workloads — document summarisation, internal search, code assistance, and custom automation — without enterprise cloud subscription costs.' },
+                  { title: 'More Than an AI Box', body: 'The same machine can host internal tools, act as a workstation server, or run virtualised environments. One piece of hardware, multiple functions.' },
+                  { title: 'Connects to Your Existing Stack', body: 'We integrate your on-site AI with your existing applications via API — no rewrites, no migrations, just new capability on top of what you already use.' },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#e87c5a] mt-2 shrink-0" />
+                    <div>
+                      <p className="text-white text-sm font-semibold mb-0.5">{item.title}</p>
+                      <p className="text-[#666666] text-xs leading-relaxed">{item.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-[#222222] mt-8 pt-6 flex items-end justify-between gap-4">
+                <div>
+                  <p className="text-[#555555] text-xs mb-1">Starting at</p>
+                  <p className="text-white text-2xl font-extrabold">$2,500</p>
+                  <p className="text-[#555555] text-xs mt-1">Spec depends on model size and concurrency requirements.</p>
+                </div>
+                <Link href="/contact" className="shrink-0 bg-[#e87c5a] hover:bg-[#d06848] text-white text-xs font-bold px-5 py-2.5 rounded-lg transition-colors uppercase tracking-wide">
+                  Get a Quote
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="text-center mt-10">
-            <Link href="/services" className="inline-flex items-center gap-2 text-[#e87c5a] hover:text-[#d06848] font-medium text-sm transition-colors">
+
+          <div className="text-center mt-8">
+            <Link href="/services" className="inline-flex items-center gap-2 text-[#555555] hover:text-[#e87c5a] font-medium text-sm transition-colors">
               View all services →
             </Link>
           </div>
