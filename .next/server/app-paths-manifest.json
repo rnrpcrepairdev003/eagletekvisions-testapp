@@ -1,7 +1,3 @@
 {
-  "/EV/Articles/page": "app/EV/Articles/page.js",
-  "/about/page": "app/about/page.js",
-  "/services/page": "app/services/page.js",
-  "/EV/[slug]/page": "app/EV/[slug]/page.js",
   "/page": "app/page.js"
 }

@@ -88,16 +88,101 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS BAR ────────────────────────────────── */}
-      <section className="border-y border-[#eeeeee] bg-[#f7f7f7]">
+      <section className="border-y border-white/5 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x divide-white/5">
             {stats.map((s) => (
               <div key={s.label}>
-                <p className="text-3xl font-extrabold text-[#1c1c1c]">{s.value}</p>
-                <p className="text-sm text-[#888888] mt-1">{s.label}</p>
+                <p className="text-3xl font-extrabold text-[#e87c5a]">{s.value}</p>
+                <p className="text-sm text-[#555555] mt-1">{s.label}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── COMPANY VIDEO ────────────────────────────── */}
+      <section className="relative bg-[#0d0d0d] py-24 overflow-hidden">
+        {/* Subtle background grid */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        {/* Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e87c5a]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section label + heading */}
+          <div className="text-center mb-12">
+            <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.25em] mb-3">Who We Are</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+              See Eagletek Visions in Action
+            </h2>
+            <p className="text-[#555555] text-sm max-w-lg mx-auto leading-relaxed">
+              A short look at how we work, who we serve, and what sets our approach apart from every other IT firm in the valley.
+            </p>
+          </div>
+
+          {/* Video frame */}
+          <div className="relative max-w-4xl mx-auto">
+
+            {/* Outer glow ring */}
+            <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-[#e87c5a]/30 via-transparent to-[#e87c5a]/10" />
+
+            {/* Frame */}
+            <div className="relative rounded-2xl overflow-hidden bg-[#111111] border border-[#2a2a2a]">
+
+              {/* 16:9 placeholder */}
+              <div className="relative w-full pb-[56.25%]">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
+
+                  {/* Cinematic scan lines overlay */}
+                  <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #ffffff 2px, #ffffff 3px)', backgroundSize: '100% 4px' }} />
+
+                  {/* Corner marks */}
+                  {['top-4 left-4', 'top-4 right-4', 'bottom-4 left-4', 'bottom-4 right-4'].map((pos, i) => (
+                    <div key={i} className={`absolute ${pos} w-6 h-6 border-[#e87c5a]/40 ${i < 2 ? 'border-t' : 'border-b'} ${i % 2 === 0 ? 'border-l' : 'border-r'}`} />
+                  ))}
+
+                  {/* Play button */}
+                  <div className="relative z-10 flex flex-col items-center gap-5">
+                    <div className="w-20 h-20 rounded-full border-2 border-[#e87c5a]/50 flex items-center justify-center bg-[#e87c5a]/10 backdrop-blur-sm">
+                      <svg className="w-8 h-8 text-[#e87c5a] translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-white text-sm font-semibold mb-1">Company Overview</p>
+                      <p className="text-[#444444] text-xs">Video coming soon</p>
+                    </div>
+                  </div>
+
+                  {/* Bottom bar — simulated video controls */}
+                  <div className="absolute bottom-0 inset-x-0 px-5 py-3 bg-gradient-to-t from-black/80 to-transparent flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-[#e87c5a]/60" />
+                    <div className="flex-1 h-px bg-[#333333] relative">
+                      <div className="absolute left-0 top-0 h-full w-0 bg-[#e87c5a]/40 rounded-full" />
+                    </div>
+                    <span className="text-[#555555] text-xs font-mono">0:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Three callouts below the video */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#1e1e1e] border border-[#1e1e1e] rounded-2xl overflow-hidden mt-6 max-w-4xl mx-auto">
+            {[
+              { label: 'Runtime', value: '~2 Min', sub: 'Concise company overview' },
+              { label: 'Coverage', value: '6 Topics', sub: 'Services · Team · Process · Results' },
+              { label: 'Available', value: 'Coming Soon', sub: 'Production in progress' },
+            ].map((item) => (
+              <div key={item.label} className="bg-[#0f0f0f] px-7 py-5 text-center">
+                <p className="text-[#555555] text-xs uppercase tracking-widest mb-1">{item.label}</p>
+                <p className="text-white font-extrabold text-lg mb-0.5">{item.value}</p>
+                <p className="text-[#444444] text-xs">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
