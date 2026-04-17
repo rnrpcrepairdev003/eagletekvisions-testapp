@@ -106,8 +106,8 @@ export default function Footer() {
         <div className="border-t border-[#e0e0e0]/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#888888]">
           <p>&copy; {new Date().getFullYear()} Eagletek Visions. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/contact" className="hover:text-[#d0d0d0] transition-colors">Privacy Policy</Link>
-            <Link href="/contact" className="hover:text-[#d0d0d0] transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-[#d0d0d0] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#d0d0d0] transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

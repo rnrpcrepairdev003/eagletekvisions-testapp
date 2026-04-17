@@ -27,10 +27,72 @@ export interface Article {
   videos: ArticleVideo[]
   pricing: string
   icon: string
+  coverImage: string
   whatsIncluded: string[]
 }
 
 const articles: Article[] = [
+  // ── B2B ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'managed-it-vs-inhouse',
+    title: 'Managed IT vs. In-House IT: The True Cost Comparison for Small Businesses',
+    badge: 'Business IT Strategy',
+    metaDescription: 'A practical cost comparison between hiring in-house IT staff and outsourcing to a managed IT provider — covering salary, benefits, coverage gaps, and total cost of ownership.',
+    excerpt: 'Is hiring an in-house IT employee actually cheaper than a managed IT provider? A full breakdown of the real costs most businesses overlook.',
+    icon: 'chart',
+    coverImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+    pricing: 'From $149/mo per user',
+    whatsIncluded: ['Full IT department capabilities', 'Proactive monitoring and management', 'Dedicated account manager', 'Compliance and security programme', '2-hour response SLA', 'Monthly IT health reports'],
+    intro: 'One of the most common questions business owners ask when evaluating IT support options is whether it makes more financial sense to hire an in-house IT employee or outsource to a managed service provider. On the surface, the decision appears straightforward — but when you account for the full cost of employment and the structural limitations of a single-person IT function, the comparison looks very different.',
+    sections: [
+      {
+        heading: 'The Real Cost of an In-House IT Employee',
+        paragraphs: [
+          'The average salary for an IT support specialist in California ranges from $55,000 to $80,000 per year, depending on experience. But salary is only part of the cost. When you add employer payroll taxes (approximately 7.65%), health insurance contributions ($6,000–$12,000/year), paid time off, retirement contributions, and equipment, the fully loaded cost of a single mid-level IT employee typically reaches $75,000–$110,000 annually.',
+          'Beyond compensation, there are productivity costs that rarely appear in budget conversations. A single IT employee cannot realistically cover all the specialised disciplines a modern business requires — network architecture, cybersecurity, cloud administration, compliance, and helpdesk support each represent distinct areas of expertise. One generalist cannot maintain current knowledge across all of them simultaneously.',
+          'Coverage is the most significant structural limitation. A single employee is unavailable during evenings, weekends, holidays, and their own sick days and vacation. For a business that operates outside standard hours or cannot afford downtime, a solo IT hire creates a predictable gap in coverage that managed IT services inherently address.',
+        ],
+        tips: [
+          'Request a fully loaded cost calculation — not just base salary — when evaluating in-house IT hire',
+          'Consider how your IT needs scale: managed IT costs grow linearly with users, while in-house costs jump in large increments',
+          'Evaluate coverage requirements honestly — if your business cannot afford weekend downtime, a single hire is not sufficient',
+        ],
+      },
+      {
+        heading: 'What Managed IT Actually Covers',
+        paragraphs: [
+          'A managed IT provider replaces the need for multiple internal hires by providing a team of specialists across the full range of IT disciplines. Rather than one generalist, you have access to network engineers, security analysts, cloud architects, and helpdesk technicians — each with current certifications in their specific domain.',
+          'Proactive monitoring is the most significant difference in service model. Managed IT providers monitor your infrastructure 24/7 for hardware failures, security anomalies, performance degradation, and compliance gaps — identifying and resolving issues before they become business disruptions. In-house IT typically operates reactively: a problem is reported, then investigated.',
+          'Vendor management, licensing compliance, hardware procurement, and software updates are all handled within the managed IT engagement. For a business without dedicated IT staff, these administrative tasks typically fall to whoever is available — usually a non-technical employee spending time on tasks outside their expertise.',
+        ],
+        tips: [
+          'Ask prospective managed IT providers for their average response time metrics — not just the SLA promise',
+          'Confirm that monitoring is active 24/7, not just during business hours',
+          'Review what is explicitly included vs. billed separately — helpdesk calls, on-site visits, and project work are common exclusions in low-cost plans',
+        ],
+      },
+      {
+        heading: 'When In-House IT Makes Sense',
+        paragraphs: [
+          'In-house IT is the right choice for organisations with 100+ employees, highly specialised or regulated infrastructure, or operational requirements that demand full-time on-site presence. At that scale, the cost per user for managed IT may exceed the cost of dedicated internal staff, and the complexity may warrant a full internal team anyway.',
+          'Hybrid models — where a managed IT provider handles monitoring, helpdesk, and security while an internal IT coordinator manages vendor relationships and day-to-day requests — are increasingly common in mid-market organisations. This approach captures the cost efficiency and specialist coverage of managed IT while maintaining an internal point of contact who understands the business deeply.',
+          'For businesses under 50 employees, the managed IT model almost always delivers more capability per dollar than a comparable in-house hire. The crossover point varies by industry, location, and infrastructure complexity — but for most small and mid-sized businesses, the decision is not close.',
+        ],
+      },
+    ],
+    sources: [
+      { label: 'U.S. Bureau of Labor Statistics — Computer Support Specialists', url: 'https://www.bls.gov/ooh/computer-and-information-technology/computer-support-specialists.htm' },
+      { label: 'SHRM — Employee Benefits Survey', url: 'https://www.shrm.org/topics-tools/research/employee-benefits-survey' },
+      { label: 'CompTIA — IT Industry Outlook', url: 'https://www.comptia.org/content/research/it-industry-trends-analysis' },
+      { label: 'NIST — Small Business Cybersecurity Corner', url: 'https://www.nist.gov/cybersecurity/small-business-resources' },
+    ],
+    videos: [
+      { title: 'What is an MSP? Managed Service Providers Explained', youtubeId: 'Ezwg1dKn1HM', channel: 'Cybrary' },
+      { title: 'In-House IT vs. Managed Services', youtubeId: 'uSHIiBNoE0E', channel: 'Ntiva' },
+    ],
+  },
+
+  // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
     slug: 'computer-repair',
     title: 'Professional Computer Repair: What You Need to Know',
@@ -38,6 +100,7 @@ const articles: Article[] = [
     metaDescription: 'Learn when to repair vs. replace your computer, how to identify hardware vs. software failures, and what to expect from a professional repair service.',
     excerpt: 'Fast, reliable computer repair for desktops and laptops. Certified technicians, transparent pricing, and a 90-day guarantee on all repairs.',
     icon: 'monitor',
+    coverImage: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $65',
     whatsIncluded: ['Free initial diagnosis', 'Certified technician service', 'Quality OEM or equivalent parts', '90-day repair warranty', 'Data backup before repairs begin', 'Post-repair system testing'],
     intro: 'Your computer is one of the most complex and frequently used pieces of technology you own. When something goes wrong — whether it refuses to boot, runs unbearably slow, or makes alarming noises — understanding the problem and knowing your options can save you both time and money.',
@@ -89,6 +152,72 @@ const articles: Article[] = [
     ],
   },
 
+  // ── B2B ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'cloud-migration-guide',
+    title: 'Cloud Migration for Small Business: A Step-by-Step Planning Guide',
+    badge: 'Cloud Solutions',
+    metaDescription: 'A practical guide to planning and executing a cloud migration for small and mid-sized businesses — covering readiness assessment, migration strategies, and post-migration cost management.',
+    excerpt: 'Moving to the cloud can cut costs, improve uptime, and enable remote work — but only if the migration is planned correctly. Here\'s how to do it right.',
+    icon: 'cloud',
+    coverImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+    pricing: 'From $2,500 per project',
+    whatsIncluded: ['Cloud readiness assessment', 'Migration strategy and timeline', 'Workload migration and validation', 'Security and access configuration', 'Cost optimisation setup', 'Staff training and documentation'],
+    intro: 'Cloud migration is one of the most impactful technology decisions a small or mid-sized business can make — and one of the easiest to get wrong. When executed well, moving workloads to the cloud reduces infrastructure costs, improves disaster recovery capabilities, and enables the flexible, remote-accessible work environment that modern businesses require. When executed poorly, it creates unexpected costs, performance degradation, and security gaps that can take months to untangle.',
+    sections: [
+      {
+        heading: 'Assessing Your Cloud Readiness',
+        paragraphs: [
+          'A cloud migration should begin with an honest inventory of your current environment. This means cataloguing every application your business depends on, understanding how each connects to others, identifying which have vendor-provided cloud versions, and determining which workloads would benefit from moving to the cloud versus those that are better left on-premise. Not every workload belongs in the cloud — legacy applications with hardware dependencies, applications with very high data throughput requirements, and systems with specific regulatory constraints on data residency may be better served by on-premise or hybrid deployments.',
+          'Connectivity is a critical readiness factor that businesses frequently overlook. Cloud-dependent operations are only as reliable as your internet connection. Before migrating core business systems, evaluate your current bandwidth, identify single points of failure in your connectivity, and consider whether a secondary connection or cellular failover is warranted. A 100Mbps symmetric fibre connection is a reasonable baseline for a 10-15 person team operating in a cloud-first environment.',
+          'Licensing and cost modelling should be completed before migration begins, not after. Cloud services are often priced per-user or per-consumption, and the costs scale with usage in ways that on-premise infrastructure does not. A detailed cost model that accounts for storage, compute, data transfer, licensing, and support costs prevents the "cloud cost shock" that many businesses experience 3–6 months after migration when the bills arrive.',
+        ],
+        tips: [
+          'Create an application dependency map before migration — moving one system without understanding what it connects to causes unexpected outages',
+          'Request pricing for at least 3 years of projected usage — cloud costs that look favourable in year one may not be in year three as your data grows',
+          'Identify which applications have SaaS alternatives before planning a lift-and-shift migration — SaaS is usually cheaper and easier to maintain',
+        ],
+      },
+      {
+        heading: 'Choosing the Right Migration Strategy',
+        paragraphs: [
+          'There is no single cloud migration strategy — the right approach depends on the specific workload being moved. The most common strategies are Rehost ("lift and shift"), Replatform ("lift and optimise"), and Refactor ("re-architect"). Rehosting moves an existing workload to the cloud without modification — it is the fastest approach and requires the least expertise, but typically delivers the least cost optimisation since the workload was designed for on-premise infrastructure.',
+          'Replatforming makes targeted modifications to take advantage of cloud-native features without a full rebuild — for example, moving a database from a self-managed server to a fully managed cloud database service like AWS RDS or Azure SQL Database. This reduces operational overhead significantly without requiring application code changes. For most small business workloads, a combination of rehosting and replatforming is the most practical approach.',
+          'For Microsoft-centric businesses (the majority of small businesses), the migration path often runs through Microsoft 365 and Azure. Email and collaboration moving to Exchange Online and Teams, file shares moving to SharePoint and OneDrive, and servers moving to Azure Virtual Machines or Azure Virtual Desktop represents a well-supported, well-documented migration path with abundant tooling and partner support from Microsoft.',
+        ],
+        tips: [
+          'Pilot your migration with a non-critical workload first — establish your process and identify unexpected challenges before touching business-critical systems',
+          'Schedule migrations outside business hours and have a rollback plan for each workload before beginning',
+          'Document the new environment thoroughly as you go — cloud resources are easy to lose track of without good tagging and documentation practices',
+        ],
+      },
+      {
+        heading: 'Managing Cloud Costs After Migration',
+        paragraphs: [
+          'Cloud cost management is an ongoing discipline, not a one-time configuration. The most common source of unexpected cloud spend is over-provisioned resources — virtual machines sized for peak load running at 10% utilisation the other 22 hours of the day. All major cloud platforms provide cost management tools (AWS Cost Explorer, Azure Cost Management) that identify underutilised resources and recommend right-sizing. Reviewing these dashboards monthly is a best practice that most small businesses neglect.',
+          'Reserved instances and savings plans offer significant discounts (40–70%) over on-demand pricing for workloads with predictable usage. If you know a virtual machine will run continuously for the next 1–3 years, committing to that usage through a reservation provides substantial cost savings. Conversely, development and test environments that only run during business hours should be configured to shut down automatically outside those hours.',
+          'Data egress costs — the fees cloud providers charge for data leaving their platform — are a frequently overlooked budget item. Backing up large datasets to a different cloud provider, serving large files directly from cloud storage without a CDN, or heavy cross-region traffic can generate significant unexpected costs. Understanding the pricing model for your specific usage pattern before committing to an architecture prevents billing surprises.',
+        ],
+        tips: [
+          'Set budget alerts in your cloud platform so you are notified before spending exceeds projections',
+          'Tag all cloud resources with the department or project they belong to — this makes cost attribution and analysis practical',
+          'Review cloud spend quarterly against the original cost model and adjust reservations as your usage patterns become clearer',
+        ],
+      },
+    ],
+    sources: [
+      { label: 'Microsoft — Cloud Adoption Framework for Azure', url: 'https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/' },
+      { label: 'AWS — Cloud Migration Guide', url: 'https://aws.amazon.com/cloud-migration/' },
+      { label: 'NIST — Cloud Computing Overview', url: 'https://www.nist.gov/programs-projects/nist-cloud-computing-program-nccp' },
+      { label: 'CompTIA — State of the Channel: Cloud Computing Trends', url: 'https://www.comptia.org/content/research/state-of-the-channel' },
+    ],
+    videos: [
+      { title: 'Cloud Migration Strategy for Small Business', youtubeId: 'M988_fsOSWo', channel: 'Microsoft Azure' },
+      { title: 'What is Cloud Migration? Strategies & Best Practices', youtubeId: 'NooBl23T0Vc', channel: 'IBM Technology' },
+    ],
+  },
+
+  // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
     slug: 'virus-removal',
     title: 'Virus & Malware Removal: A Complete Guide',
@@ -96,6 +225,7 @@ const articles: Article[] = [
     metaDescription: 'Understand the different types of malware, how to recognise an infected system, and why professional removal is more effective than consumer antivirus alone.',
     excerpt: 'Complete virus, malware, ransomware, and spyware removal — with security setup to prevent future infections.',
     icon: 'shield',
+    coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $75',
     whatsIncluded: ['Multi-tool threat scanning', 'Complete malware removal', 'System file repair', 'Browser cleanup and reset', 'Security software installation', 'Prevention tips and walkthrough'],
     intro: 'Malware — a term covering viruses, ransomware, spyware, adware, and a growing roster of other threats — has become one of the most significant technology challenges individuals and businesses face. In 2024, ransomware and extortion techniques were present in roughly one-third of all confirmed data breaches globally, according to Verizon\'s Data Breach Investigations Report. Understanding what you\'re dealing with is the first step toward protecting yourself.',
@@ -154,6 +284,7 @@ const articles: Article[] = [
     metaDescription: 'Learn how data loss happens, what to do immediately after a drive failure, when professional recovery is necessary, and how to protect yourself with a solid backup strategy.',
     excerpt: 'Recover lost files, photos, and business data from failed hard drives, SSDs, RAID arrays, and USB drives with high success rates.',
     icon: 'database',
+    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $149',
     whatsIncluded: ['Free device evaluation', 'Sector-by-sector drive imaging', 'Professional recovery tools', 'File integrity verification', 'Secure data delivery', 'No-recovery, no-fee options available'],
     intro: 'Data loss is more common and more devastating than most people expect. According to Backblaze\'s 2024 drive reliability statistics, annualized failure rates vary significantly by drive model and age — and that rate climbs meaningfully in years three and four of a drive\'s life. Whether caused by mechanical failure, accidental deletion, or malware, data loss demands an immediate and informed response — the wrong actions in the first minutes can make recovery impossible.',
@@ -212,6 +343,7 @@ const articles: Article[] = [
     metaDescription: 'Understand the most common laptop hardware failures, what causes them, when water damage requires emergency action, and how to evaluate repair costs vs. replacement.',
     excerpt: 'Comprehensive laptop repair services — screens, keyboards, batteries, hinges, ports, and motherboards for all major brands.',
     icon: 'laptop',
+    coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $79',
     whatsIncluded: ['Free device inspection', 'OEM or equivalent quality parts', 'ESD-safe repair procedures', 'Full system test post-repair', '90-day parts and labour warranty', 'Data safety throughout repair'],
     intro: 'Laptops are precision engineering packed into thin, portable packages that endure more physical stress than virtually any other computing device. Dropped, sat on, spilled on, carried in bags, opened and closed thousands of times — the mechanical demands placed on a laptop are substantial. Understanding the most common failure modes helps you respond appropriately and set realistic expectations for repair outcomes.',
@@ -232,7 +364,7 @@ const articles: Article[] = [
       {
         heading: 'Water Damage: The Importance of Acting Fast',
         paragraphs: [
-          'Liquid spills are one of the most time-critical laptop repairs. When liquid contacts a powered circuit board, it creates conductive bridges between components that cause short circuits. The longer the board remains powered and wet, the more components are damaged by these shorts. The correct immediate response is to power off the laptop by holding the power button (do not use the operating system shutdown — it takes too long), remove the battery if accessible, and invert the laptop to drain liquid.',
+          'Liquid spills are one of the most time-critical laptop repairs. When liquid contacts a powered circuit board, it creates conductive bridges between components that cause short circuits. The longer the board remains powered and wet, the more components are damaged by these shorts. The correct immediate response is to power off the laptop by holding the power button, remove the battery if accessible, and invert the laptop to drain liquid.',
           'The instinct to immediately test whether the laptop still works is understandable but counterproductive. Powering on a wet laptop even briefly can turn a recoverable situation into catastrophic board damage. The laptop should be brought to a technician who will open it, clean all corrosion with isopropyl alcohol, and allow complete drying before attempting to power it on in a controlled environment.',
           'Success rates for water damage repairs depend heavily on the type of liquid (water is more recoverable than juice or coffee due to the absence of sugars and acids) and time elapsed. A laptop treated within a few hours has a significantly better prognosis than one where the owner continued using it or waited days before seeking repair.',
         ],
@@ -263,6 +395,72 @@ const articles: Article[] = [
     ],
   },
 
+  // ── B2B ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'microsoft-365-for-business',
+    title: 'Microsoft 365 for Business: Setup, Security, and Best Practices',
+    badge: 'Cloud Productivity',
+    metaDescription: 'A practical guide to deploying Microsoft 365 for your business — choosing the right plan, hardening your tenant\'s security, and getting maximum value from features most businesses underuse.',
+    excerpt: 'Microsoft 365 is more than email. A properly configured and secured M365 tenant is the productivity and security foundation every modern business needs.',
+    icon: 'mail',
+    coverImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+    pricing: 'From $22/user/mo (licensing + managed setup)',
+    whatsIncluded: ['Tenant setup and domain configuration', 'User provisioning and email migration', 'Teams and SharePoint deployment', 'MFA and Conditional Access setup', 'OneDrive and backup configuration', 'Ongoing admin and licence management'],
+    intro: 'Microsoft 365 has become the default productivity platform for small and mid-sized businesses — and for good reason. Exchange Online, Teams, SharePoint, OneDrive, and the full suite of Office applications, all managed through a single cloud-based admin centre, provide a complete collaboration and communication infrastructure that would have cost dramatically more to run on-premise a decade ago. But a default Microsoft 365 deployment leaves significant security and productivity value on the table. Getting the configuration right from the start — or cleaning up a poorly configured existing tenant — makes a substantial difference.',
+    sections: [
+      {
+        heading: 'Choosing the Right Microsoft 365 Plan',
+        paragraphs: [
+          'Microsoft 365 comes in several business tiers: Microsoft 365 Business Basic ($6/user/mo), Business Standard ($12.50/user/mo), Business Premium ($22/user/mo), and various Enterprise plans. For most small businesses, the decision comes down to Business Standard vs. Business Premium. Business Standard includes the full Office apps, Exchange Online, Teams, and SharePoint. Business Premium adds Intune (device management), Azure AD P1 (Conditional Access), Microsoft Defender for Business, and Azure Information Protection — all of which are significant security capabilities.',
+          'Business Premium is the right choice for any organisation that handles sensitive data, is subject to regulatory compliance requirements, or has employees accessing business resources from personal devices. The additional $9.50/user/mo over Business Standard pays for endpoint management and security tooling that would cost significantly more if purchased separately. For a 10-person team, the difference is $95/month for a materially stronger security posture.',
+          'Microsoft\'s non-profit pricing programme offers qualified organisations up to 10 donated Business Premium licences and heavily discounted pricing beyond that. Healthcare organisations should also evaluate Microsoft 365 Business Premium against HIPAA requirements — Microsoft provides a HIPAA Business Associate Agreement and the platform\'s security controls support compliant deployments when properly configured.',
+        ],
+        tips: [
+          'Do not purchase Microsoft 365 licences through a retail channel — work with a Microsoft Cloud Solution Provider (CSP) who can provide support and licence management',
+          'Audit your current licence usage quarterly — unused licences for departed employees are the most common source of wasted M365 spend',
+          'Business Premium\'s Intune licence is sufficient for most small businesses — there is no need to purchase standalone Intune or Defender unless you have specific enterprise requirements',
+        ],
+      },
+      {
+        heading: 'Security Hardening Your M365 Tenant',
+        paragraphs: [
+          'A default Microsoft 365 tenant is not a secure Microsoft 365 tenant. The most important immediate security configuration is enabling Multi-Factor Authentication for all users — Microsoft\'s own data indicates that MFA blocks over 99.9% of account compromise attempts. Microsoft 365 Business Premium includes Conditional Access policies that allow MFA to be enforced contextually (e.g., required when accessing from outside the office network or from unmanaged devices).',
+          'Microsoft Secure Score is a built-in dashboard that measures your tenant\'s security configuration against Microsoft\'s recommended baseline and provides a prioritised list of improvements. A freshly created tenant typically scores in the 30–40% range. Reaching 70–80% Secure Score through straightforward configuration changes — enabling MFA, configuring anti-phishing policies, enabling audit logging, and disabling legacy authentication protocols — significantly reduces attack surface without adding user friction.',
+          'Email security deserves specific attention. Business Email Compromise (BEC) — where attackers impersonate executives or vendors in email to authorise fraudulent wire transfers — is the highest-dollar-value cybercrime category and disproportionately targets small businesses. Configuring DMARC, DKIM, and SPF records for your domain prevents attackers from spoofing your email address. Enabling Microsoft Defender\'s anti-phishing and anti-impersonation policies catches attacks targeting your domain.',
+        ],
+        tips: [
+          'Enable Security Defaults in Azure AD if you are not using Conditional Access — it provides baseline MFA enforcement at no additional cost',
+          'Disable legacy authentication protocols (Basic Auth) in Exchange Online — they bypass MFA entirely and are a common attack vector',
+          'Configure the Microsoft 365 Admin Centre\'s "Privacy and security" section to enable unified audit logging — required for incident investigation',
+        ],
+      },
+      {
+        heading: 'Features Most Businesses Are Leaving Unused',
+        paragraphs: [
+          'Microsoft Teams is the most underutilised component of most Microsoft 365 subscriptions. Beyond basic chat and video meetings, Teams supports persistent project channels, file collaboration with real-time co-authoring, task management via Planner integration, and automation through Power Automate. Businesses that continue using email for internal project communication and shared network drives for file storage are paying for Teams capabilities they\'re not using.',
+          'SharePoint Online provides a scalable document management platform that replaces the need for an on-premise file server. Properly structured SharePoint libraries with appropriate permissions, version history, and metadata can replace a physical file server entirely while providing anywhere-access, granular permissions, and audit trails that a traditional file server cannot match. The migration from a file server to SharePoint Online is one of the highest-value infrastructure changes a small business can make.',
+          'Power Automate (formerly Microsoft Flow) enables non-developers to build automated workflows connecting Microsoft 365 services and hundreds of external applications. Common business automations include automatic SharePoint filing of email attachments, Teams notifications when a form is submitted, approval workflows for purchase orders, and automated onboarding tasks when a new user is created in Azure AD. These automations are included in most Microsoft 365 plans and require no coding to implement.',
+        ],
+        tips: [
+          'Migrate your shared drive to SharePoint before deploying Teams — Teams channels use SharePoint as their document storage backend',
+          'Create a Microsoft 365 governance policy before rollout — deciding naming conventions, channel policies, and guest access rules prevents configuration sprawl',
+          'Use Microsoft\'s Adoption Hub resources to drive user adoption — technology that employees don\'t use provides no ROI regardless of how well it\'s configured',
+        ],
+      },
+    ],
+    sources: [
+      { label: 'Microsoft — Microsoft 365 Business Plans and Pricing', url: 'https://www.microsoft.com/en-us/microsoft-365/business/compare-all-plans' },
+      { label: 'Microsoft — Microsoft Secure Score Documentation', url: 'https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score' },
+      { label: 'CISA — Microsoft 365 Security Best Practices', url: 'https://www.cisa.gov/sites/default/files/publications/CISA_MS-ISAC_Microsoft365_Guide.pdf' },
+      { label: 'Microsoft — HIPAA and the Microsoft Cloud', url: 'https://learn.microsoft.com/en-us/compliance/regulatory/offering-hipaa-hitech' },
+    ],
+    videos: [
+      { title: 'Microsoft 365 for Business – Complete Setup Guide', youtubeId: 'pKaLMFyVgaI', channel: 'Kevin Stratvert' },
+      { title: 'Microsoft 365 Security Best Practices for Small Business', youtubeId: 'LD_-3RRpnw0', channel: 'Microsoft 365' },
+    ],
+  },
+
+  // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
     slug: 'screen-replacement',
     title: 'Laptop & Device Screen Replacement: Everything You Need to Know',
@@ -270,6 +468,7 @@ const articles: Article[] = [
     metaDescription: 'A guide to screen replacement for laptops and tablets — display types, what affects cost, the risks of DIY replacement, and what professional replacement involves.',
     excerpt: 'Cracked, flickering, or dead display? We replace screens for laptops, tablets, and all-in-one computers — same day in most cases.',
     icon: 'screen',
+    coverImage: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $89',
     whatsIncluded: ['Model-specific screen sourcing', 'Professional ESD-safe installation', 'Touch calibration (where applicable)', 'Dead pixel and brightness testing', '90-day display warranty', 'Same-day service for most models'],
     intro: 'A damaged or failed screen is one of the most disabling hardware problems a laptop user can experience. The display is the primary interface between user and machine — without it, the device is effectively unusable. Fortunately, screen replacement is also one of the most straightforward laptop repairs, and most models can be completed in under an hour by an experienced technician.',
@@ -279,31 +478,31 @@ const articles: Article[] = [
         paragraphs: [
           'Not all laptop screens are equal. TN (Twisted Nematic) panels are the oldest technology — fast refresh rates but poor colour accuracy and narrow viewing angles. IPS (In-Plane Switching) panels offer significantly better colour accuracy and viewing angles and have become standard in most modern mid-range to premium laptops. OLED displays, now appearing in premium consumer laptops and MacBooks, offer perfect blacks, exceptional contrast, and wide colour gamut — but are also the most expensive to replace.',
           'Screen resolution matters for replacement matching. Installing a 1080p replacement panel in a chassis designed for a 4K display will work but will look noticeably inferior. Reputable repair services source screens that match the original panel\'s resolution, brightness, and colour space specifications rather than substituting lower-grade panels to cut costs.',
-          'Touch screens add another layer of complexity. Many modern laptops and 2-in-1 devices integrate the touch digitiser directly into the display assembly. Replacing only the glass on these assemblies without specialist equipment risks destroying the digitiser, turning a glass-only repair into a full display assembly replacement. Professional shops that regularly handle touch screen repairs have the UV-bonding equipment required for glass-only repairs on bonded assemblies.',
+          'Touch screens add another layer of complexity. Many modern laptops and 2-in-1 devices integrate the touch digitiser directly into the display assembly. Replacing only the glass on these assemblies without specialist equipment risks destroying the digitiser, turning a glass-only repair into a full display assembly replacement.',
         ],
         tips: [
           'Ask whether the replacement screen matches your original panel\'s resolution and colour gamut — not just the physical size',
-          'Verify the repair shop tests for dead pixels, backlight uniformity, and (on touch screens) full touch calibration before returning your device',
+          'Verify the repair shop tests for dead pixels, backlight uniformity, and touch calibration before returning your device',
           'If your screen is flickering rather than cracked, the display cable may be the issue — often a $30–60 repair rather than a full screen replacement',
         ],
       },
       {
         heading: 'The Hidden Risks of DIY Screen Replacement',
         paragraphs: [
-          'Laptop screen replacement looks deceptively straightforward in tutorial videos. In practice, it involves disconnecting fragile ribbon cables with tiny ZIF connectors that break if folded incorrectly, removing adhesive-secured bezels that crack if pried at the wrong angle, and handling the replacement panel without touching the display surface (fingerprints behind the glass are permanent). The static sensitivity of display components also means ESD (electrostatic discharge) damage is a real risk without proper grounding equipment.',
+          'Laptop screen replacement looks deceptively straightforward in tutorial videos. In practice, it involves disconnecting fragile ribbon cables with tiny ZIF connectors that break if folded incorrectly, removing adhesive-secured bezels that crack if pried at the wrong angle, and handling the replacement panel without touching the display surface. The static sensitivity of display components also means ESD damage is a real risk without proper grounding equipment.',
           'The risk profile is higher still for touch screen assemblies. The digitiser cable routing on many models requires near-complete disassembly to access correctly, and the adhesive bonding between the glass and panel needs specific UV-curing adhesive and equipment to achieve a bubble-free, water-resistant seal. Improper bonding results in display delamination within weeks.',
-          'The cost of a professional screen replacement — typically $90–200 for most laptops — needs to be weighed against the cost of the screen panel itself (which you would buy for a DIY repair) plus the risk of compounding the damage. If a DIY attempt breaks the display cable, the repair cost jumps significantly. For most users, the risk-reward calculation favours professional repair.',
+          'The cost of a professional screen replacement — typically $90–200 for most laptops — needs to be weighed against the cost of the screen panel itself (which you would buy for a DIY repair) plus the risk of compounding the damage. If a DIY attempt breaks the display cable, the repair cost jumps significantly.',
         ],
       },
       {
         heading: 'What Affects Screen Replacement Cost',
         paragraphs: [
-          'The primary cost driver is the screen assembly itself. Budget laptop panels can be sourced for $30–60, while premium IPS displays for mid-range laptops typically run $80–150. OLED panels for premium devices like Dell XPS, LG Gram, or MacBook Pro are $200–400 or more for the display assembly alone. Labour is relatively consistent at $40–80 for most screen replacements given the similar disassembly requirements.',
-          'Brand and model exclusivity affects parts availability significantly. Common business laptops like ThinkPads and Dell Latitudes have abundant aftermarket panel supply and competitive pricing. Niche models, older machines, or specialised displays (high refresh rate gaming panels, very high resolution displays) may require original manufacturer parts at a premium.',
-          'Warranty status is worth checking before authorising a repair. Screen damage is generally not covered under standard manufacturer warranties (it\'s considered physical damage), but some premium accidental damage programmes and credit card purchase protection plans cover screen repairs. AppleCare+ with theft and loss, for example, covers screen damage for a $29 deductible.',
+          'The primary cost driver is the screen assembly itself. Budget laptop panels can be sourced for $30–60, while premium IPS displays for mid-range laptops typically run $80–150. OLED panels for premium devices like Dell XPS, LG Gram, or MacBook Pro are $200–400 or more for the display assembly alone. Labour is relatively consistent at $40–80 for most screen replacements.',
+          'Brand and model exclusivity affects parts availability significantly. Common business laptops like ThinkPads and Dell Latitudes have abundant aftermarket panel supply. Niche models, older machines, or specialised displays may require original manufacturer parts at a premium.',
+          'Warranty status is worth checking before authorising a repair. Screen damage is generally not covered under standard manufacturer warranties, but some premium accidental damage programmes and credit card purchase protection plans cover screen repairs.',
         ],
         tips: [
-          'Screen protectors don\'t prevent cracking under direct impact but can prevent surface scratching that degrades display quality over time',
+          'Screen protectors prevent surface scratching that degrades display quality over time',
           'If your laptop is used on a desk primarily, an external monitor costs less than a screen replacement and gives you a larger working area',
           'Always ask for the old panel back after replacement — verify the part was actually replaced',
         ],
@@ -328,6 +527,7 @@ const articles: Article[] = [
     metaDescription: 'Learn how to plan a home or business network, understand the difference between routers, access points, and mesh systems, and why network security matters more than most people realise.',
     excerpt: 'Home and office network setup, router configuration, WiFi range optimisation, and network security hardening by certified network technicians.',
     icon: 'wifi',
+    coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $99',
     whatsIncluded: ['On-site survey and network plan', 'Router and access point configuration', 'WiFi security hardening', 'Guest network setup', 'Full coverage and speed testing', 'Device connection walkthrough'],
     intro: 'Your network is the foundation on which every internet-connected device in your home or business operates. A poorly configured network doesn\'t just mean slow streaming — it means security vulnerabilities that expose every connected device to potential attack, dead zones that make areas of your building unusable, and bottlenecks that limit the performance of otherwise capable hardware.',
@@ -336,34 +536,34 @@ const articles: Article[] = [
         heading: 'Home Networks vs. Business Networks: Key Differences',
         paragraphs: [
           'Home networks typically support 5–30 devices — smartphones, laptops, smart TVs, streaming devices, and smart home equipment. A quality consumer router with good WiFi 6 support handles this load well. The primary concerns are coverage (eliminating dead zones), performance (supporting 4K streaming and video calls simultaneously), and basic security (strong passwords, updated firmware).',
-          'Business networks have fundamentally different requirements. Multiple employees using bandwidth-intensive applications simultaneously requires quality of service (QoS) configuration to prioritise critical traffic. Guest network isolation ensures visiting clients can access the internet without reaching internal servers or workstations. VLANs (Virtual Local Area Networks) allow different departments or device categories to be logically separated on the same physical infrastructure, limiting the blast radius of any security incident.',
+          'Business networks have fundamentally different requirements. Multiple employees using bandwidth-intensive applications simultaneously requires quality of service (QoS) configuration to prioritise critical traffic. Guest network isolation ensures visiting clients can access the internet without reaching internal servers or workstations. VLANs allow different departments or device categories to be logically separated on the same physical infrastructure.',
           'Businesses also need to consider redundancy. A consumer router failing at home is an inconvenience; the same event at a business can mean hours of productivity loss. Professional network solutions typically include cellular failover — if the primary internet connection goes down, the network automatically switches to a cellular backup connection with minimal disruption.',
         ],
         tips: [
-          'Put IoT devices (smart TVs, thermostats, cameras) on a separate VLAN or guest network — they often have poor security and shouldn\'t have access to your primary devices',
-          'A dedicated wired connection for desktops, NAS devices, and printers eliminates WiFi congestion and improves reliability for high-usage devices',
+          'Put IoT devices (smart TVs, thermostats, cameras) on a separate VLAN or guest network — they often have poor security',
+          'A dedicated wired connection for desktops, NAS devices, and printers eliminates WiFi congestion for high-usage devices',
           'Enable automatic firmware updates on your router — most security vulnerabilities are exploited in the gap between patch release and user update',
         ],
       },
       {
         heading: 'Solving Dead Zones: Mesh Systems vs. Access Points',
         paragraphs: [
-          'Dead zones — areas of a building with no or poor WiFi coverage — are almost universally caused by one of three things: insufficient access point placement, physical obstacles (concrete walls, metal structures, appliances), or interference from neighbouring networks. Before buying additional hardware, it\'s worth mapping your current signal strength to understand where coverage actually fails.',
-          'WiFi extenders (repeaters) are the most commonly purchased solution and typically the worst. They rebroadcast the WiFi signal but cut bandwidth roughly in half for every hop, create a separate network SSID that devices must manually switch between, and introduce additional latency. For most use cases, they solve the coverage problem while creating a performance and usability problem.',
-          'Mesh WiFi systems (Eero, Google Nest WiFi, TP-Link Deco) use multiple nodes that communicate on a dedicated backhaul channel, maintaining a single SSID and handling device handoff automatically as you move through the space. They are more expensive than extenders but deliver a genuinely seamless experience. For larger spaces or buildings with many obstacles, a wired access point setup — where each AP connects back to the router via ethernet — delivers the best possible performance and is the standard for business deployments.',
+          'Dead zones — areas of a building with no or poor WiFi coverage — are almost universally caused by one of three things: insufficient access point placement, physical obstacles (concrete walls, metal structures, appliances), or interference from neighbouring networks.',
+          'WiFi extenders (repeaters) are the most commonly purchased solution and typically the worst. They rebroadcast the WiFi signal but cut bandwidth roughly in half for every hop, create a separate network SSID that devices must manually switch between, and introduce additional latency.',
+          'Mesh WiFi systems use multiple nodes that communicate on a dedicated backhaul channel, maintaining a single SSID and handling device handoff automatically as you move through the space. For larger spaces or buildings with many obstacles, a wired access point setup — where each AP connects back to the router via ethernet — delivers the best possible performance and is the standard for business deployments.',
         ],
       },
       {
         heading: 'Network Security: More Critical Than Most People Realise',
         paragraphs: [
-          'The default state of most consumer routers shipped by ISPs is insecure. Default admin passwords are publicly documented, WPS (WiFi Protected Setup) has known cryptographic vulnerabilities, remote management is often enabled, and firmware updates are rarely applied automatically. A Shodan search (a search engine for internet-connected devices) reveals millions of routers with default credentials still in place.',
-          'WPA3 is the current WiFi security standard and should be used where all devices support it. WPA2-AES remains acceptable; WPA2-TKIP and WEP are cryptographically broken and should never be used. Beyond encryption, disabling SSID broadcast adds a minor layer of obscurity (it doesn\'t provide real security but reduces casual scanning). MAC address filtering has limited value since MAC addresses can be spoofed but adds one more hurdle for casual attackers.',
-          'For businesses, a properly configured firewall with intrusion detection is non-negotiable. Network monitoring tools that alert on unusual traffic patterns — a device suddenly transferring large amounts of data at 3AM, for example — provide early warning of both security incidents and hardware failures. Regular penetration testing of your network perimeter validates that your security controls are actually working.',
+          'The default state of most consumer routers shipped by ISPs is insecure. Default admin passwords are publicly documented, WPS has known cryptographic vulnerabilities, remote management is often enabled, and firmware updates are rarely applied automatically.',
+          'WPA3 is the current WiFi security standard and should be used where all devices support it. WPA2-AES remains acceptable; WPA2-TKIP and WEP are cryptographically broken and should never be used.',
+          'For businesses, a properly configured firewall with intrusion detection is non-negotiable. Network monitoring tools that alert on unusual traffic patterns provide early warning of both security incidents and hardware failures.',
         ],
         tips: [
-          'Change your router admin password and WiFi password from defaults immediately upon setup — default credentials are publicly listed online',
-          'Disable UPnP (Universal Plug and Play) on your router — it allows devices to automatically open ports, which is a common attack vector',
-          'A monthly router reboot clears cached memory and applies any pending configuration changes — add it to your calendar',
+          'Change your router admin password and WiFi password from defaults immediately upon setup',
+          'Disable UPnP on your router — it allows devices to automatically open ports, which is a common attack vector',
+          'A monthly router reboot clears cached memory and applies any pending configuration changes',
         ],
       },
     ],
@@ -386,6 +586,7 @@ const articles: Article[] = [
     metaDescription: 'Understand how professional remote support works, what it can and cannot fix, how to verify a session is secure, and when remote support is the right choice.',
     excerpt: 'Fast remote support for software issues, virus removal, system slowdowns, and troubleshooting — resolved in minutes from anywhere.',
     icon: 'remote',
+    coverImage: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $55',
     whatsIncluded: ['Fully encrypted remote session', 'Live screen sharing (you watch everything)', 'Issue diagnosis and resolution', 'No software installed permanently', 'Session summary and recommendations', 'Same-day appointments available'],
     intro: 'Remote technical support has become one of the most efficient ways to resolve software issues, configuration problems, and performance problems without the time and inconvenience of an in-person visit. Modern remote support tools provide secure, encrypted connections that allow a technician to see and control your screen in real time — resolving many issues in a fraction of the time an on-site visit would require.',
@@ -394,8 +595,8 @@ const articles: Article[] = [
         heading: 'How Secure Remote Support Works',
         paragraphs: [
           'Professional remote support uses dedicated tools — TeamViewer, Splashtop, ConnectWise Control, or similar — that establish an encrypted connection between the technician\'s computer and yours. These tools do not leave a persistent backdoor; the connection exists only while the session is active and is terminated when the session ends. You receive a session code that the technician enters to connect — the connection cannot be initiated from the technician\'s side without your active participation.',
-          'Throughout the session, you see everything the technician does on your screen in real time. You can terminate the session at any moment by closing the remote tool or clicking disconnect. This full transparency is a fundamental feature of legitimate remote support — any service that asks you to minimise the window or look away while they work is operating outside accepted professional standards.',
-          'Connection security should be verifiable. Legitimate remote support tools use TLS 1.2 or 1.3 encryption — the same standard used by online banking. The session should require a one-time access code that expires after the session ends. If a "support technician" asks you to disable your antivirus before connecting or to grant "remote registry" access via Windows built-in tools rather than a dedicated application, these are warning signs of a scam.',
+          'Throughout the session, you see everything the technician does on your screen in real time. You can terminate the session at any moment by closing the remote tool or clicking disconnect. This full transparency is a fundamental feature of legitimate remote support.',
+          'Connection security should be verifiable. Legitimate remote support tools use TLS 1.2 or 1.3 encryption — the same standard used by online banking. The session should require a one-time access code that expires after the session ends.',
         ],
         tips: [
           'Always initiate contact with support services yourself — legitimate companies never call you unsolicited to warn about viruses or problems',
@@ -406,21 +607,21 @@ const articles: Article[] = [
       {
         heading: 'What Remote Support Can and Cannot Fix',
         paragraphs: [
-          'Remote support is highly effective for software-category problems: virus and malware removal, operating system errors, driver installation and conflicts, email and application configuration, browser issues, printer and peripheral setup, Windows Update failures, account lockouts, and general performance optimisation. The majority of issues reported by home and small business users fall into these categories and can be resolved entirely remotely.',
-          'Remote support cannot directly address hardware failures — a technician cannot replace a dead hard drive or reseat a loose RAM module through a remote session. However, remote diagnostics can identify hardware problems: running SMART tests remotely reveals drive health, remote access to Event Viewer surfaces hardware error logs, and temperature monitoring tools identify overheating components. A remote session that concludes with "you need X hardware replacement" is still valuable — it gives you an accurate diagnosis and repair scope before committing to a site visit.',
-          'Remote support also requires that the computer be sufficiently functional to boot and connect to the internet. Machines that won\'t POST (Power-On Self-Test), can\'t load the operating system, or have no network connectivity require in-person or depot repair. For borderline cases — a machine that boots intermittently — scheduling a remote session to attempt diagnosis during an operational window is reasonable.',
+          'Remote support is highly effective for software-category problems: virus and malware removal, operating system errors, driver installation and conflicts, email and application configuration, browser issues, printer and peripheral setup, Windows Update failures, account lockouts, and general performance optimisation.',
+          'Remote support cannot directly address hardware failures — a technician cannot replace a dead hard drive or reseat a loose RAM module through a remote session. However, remote diagnostics can identify hardware problems: running SMART tests remotely reveals drive health, remote access to Event Viewer surfaces hardware error logs.',
+          'Remote support also requires that the computer be sufficiently functional to boot and connect to the internet. Machines that won\'t POST, can\'t load the operating system, or have no network connectivity require in-person or depot repair.',
         ],
       },
       {
         heading: 'Recognising Remote Support Scams',
         paragraphs: [
-          'Tech support scams are among the most common fraud categories targeting computer users, particularly older adults. The scenario typically involves a phone call claiming to be from Microsoft, Apple, or a security company, warning that your computer is "sending error signals" or "has been compromised." The caller directs you to a website that shows alarming (and fabricated) warnings and asks you to install remote access software.',
-          'Microsoft, Apple, Google, and legitimate software companies do not make unsolicited phone calls about computer problems. They do not display pop-ups with phone numbers to call. If you receive such a call or see such a warning, the safest action is to hang up and close the browser (using Task Manager if necessary). Do not call the number displayed in the pop-up and do not follow instructions provided by an unsolicited caller.',
-          'If you are uncertain whether a support interaction is legitimate, ask for the technician\'s full name, company name, and a callback number. Search for the company independently and call back through a number you found yourself rather than one provided by the caller. A legitimate support company will welcome this verification.',
+          'Tech support scams are among the most common fraud categories targeting computer users. The scenario typically involves a phone call claiming to be from Microsoft, Apple, or a security company, warning that your computer is "sending error signals" or "has been compromised."',
+          'Microsoft, Apple, Google, and legitimate software companies do not make unsolicited phone calls about computer problems. They do not display pop-ups with phone numbers to call. If you receive such a call or see such a warning, the safest action is to hang up and close the browser.',
+          'If you are uncertain whether a support interaction is legitimate, ask for the technician\'s full name, company name, and a callback number. Search for the company independently and call back through a number you found yourself rather than one provided by the caller.',
         ],
         tips: [
           'Windows Task Manager (Ctrl+Shift+Esc) can force-close a fake warning browser window that won\'t respond to normal closing',
-          'Report tech support scam calls to the FTC at reportfraud.ftc.gov — your report helps identify and shut down operations',
+          'Report tech support scam calls to the FTC at reportfraud.ftc.gov',
           'Consider call-blocking apps or services if you or a family member receive frequent scam calls',
         ],
       },
@@ -437,6 +638,72 @@ const articles: Article[] = [
     ],
   },
 
+  // ── B2B ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'it-infrastructure-planning',
+    title: 'IT Infrastructure Planning for Business Growth: What to Build First',
+    badge: 'IT Infrastructure',
+    metaDescription: 'A practical guide to IT infrastructure planning for small and mid-sized businesses — auditing your current state, building a scalable foundation, and deciding when to upgrade vs. rebuild.',
+    excerpt: 'A well-planned IT infrastructure prevents the costly "fix it when it breaks" cycle. Here\'s how to assess what you have and build what your business actually needs.',
+    icon: 'server',
+    coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+    pricing: 'From $1,500 assessment',
+    whatsIncluded: ['Current state infrastructure audit', 'Technology gap analysis', 'Infrastructure roadmap (1–3 year)', 'Hardware and software recommendations', 'Budget planning and phasing', 'Implementation project management'],
+    intro: 'Most small businesses build their IT infrastructure reactively — adding equipment and services as needs arise, without a coherent long-term plan. The result is a patchwork of mismatched hardware, overlapping software licences, unsupported systems, and security gaps. By the time the problem is obvious, the cost of remediation is significantly higher than a planned approach would have been. IT infrastructure planning is not a luxury reserved for enterprise organisations — it is the most cost-effective way for a growing business to manage technology.',
+    sections: [
+      {
+        heading: 'Auditing Your Current IT State',
+        paragraphs: [
+          'An effective infrastructure plan starts with an accurate picture of what exists. This means a complete hardware inventory — every server, workstation, laptop, network device, and peripheral — documented with model, age, specification, and current status. It also means a software inventory covering every application in use, the licences behind it, renewal dates, and whether it\'s still vendor-supported. Many businesses are surprised to find they\'re running software on operating systems that reached end-of-support years ago — a significant security liability.',
+          'Network documentation is frequently the weakest area for small businesses. A proper network diagram showing every device, VLAN, firewall rule, and internet circuit is essential for troubleshooting, security auditing, and planning changes. Businesses that lack this documentation typically discover its absence at the worst possible time — during an outage or incident when speed of response matters most.',
+          'The audit should also identify single points of failure — components or services where a single failure would cause significant business disruption. Common examples include a single internet circuit with no failover, a critical application running on an ageing server with no redundancy, or backups that exist but have never been tested. Identifying these dependencies is the foundation of any resilience planning.',
+        ],
+        tips: [
+          'Use a RMM tool or free asset discovery tool to auto-generate your hardware and software inventory — manual cataloguing misses devices',
+          'Document your internet circuit details (ISP, contract renewal date, circuit ID) — you will need these during an outage when you are calling ISP support',
+          'Flag any hardware over 5 years old and any software running on end-of-life operating systems — these are your highest-risk assets',
+        ],
+      },
+      {
+        heading: 'Building a Scalable Foundation',
+        paragraphs: [
+          'The foundational layer of a well-designed small business IT environment consists of three components: a reliable, secured network; a managed identity and access system; and a tested data protection strategy. These three elements underpin everything else. A business that has these foundations in place can add applications, users, and capabilities efficiently. A business without them accumulates technical debt with every addition.',
+          'For identity and access management, Microsoft Entra ID (formerly Azure Active Directory) is the standard for Microsoft-centric businesses and integrates with thousands of applications through SAML and OAuth. Centralised identity management means a single place to provision and deprovision users, enforce MFA, apply Conditional Access policies, and manage device compliance — eliminating the per-application account management that creates both security gaps and administrative overhead.',
+          'Data protection — backup and recovery — must be designed for your actual recovery objectives, not just implemented as an afterthought. Recovery Time Objective (RTO) defines how quickly systems must be restored after a failure. Recovery Point Objective (RPO) defines the maximum acceptable data loss. A business that cannot function without its CRM for more than 4 hours has an RTO of 4 hours for that system — and its backup and recovery solution must be capable of meeting that objective. Most small business backup solutions are not tested against their recovery objectives.',
+        ],
+        tips: [
+          'Design your network with managed switches and separate VLANs from the beginning — retrofitting segmentation into a flat network is expensive and disruptive',
+          'Document your RTO and RPO for each business-critical system before choosing backup solutions — work backwards from business requirements',
+          'Centralise identity management before rolling out new applications — adding SSO after the fact requires re-configuring each application',
+        ],
+      },
+      {
+        heading: 'When to Upgrade vs. When to Replace',
+        paragraphs: [
+          'The decision to upgrade existing infrastructure versus replacing it entirely is one of the most consequential in IT planning — and one where both over-investment and under-investment are common mistakes. The key factors are the remaining useful life of the asset, its upgrade ceiling (the maximum specification it can reach through upgrades), and the cost of the risk it presents if it fails. A server running end-of-life software on hardware approaching five years old may have limited useful upgrade paths and represents a compounding liability.',
+          'Networking hardware typically has a longer useful life than compute hardware, but it does age. Older switches and routers may lack support for current security protocols, may not support the throughput required by cloud-dependent workflows, and are often no longer receiving firmware security updates. Incremental upgrades that extend the life of fundamentally insecure or under-specced networking equipment tend to delay rather than solve the problem.',
+          'The most cost-effective approach to infrastructure planning is a rolling replacement schedule that replaces a portion of the hardware estate each year rather than facing a large capital expenditure when everything ages out simultaneously. A 3-year replacement cycle for workstations, 5 years for servers, and 7 years for networking infrastructure provides predictable annual costs, keeps the environment supported, and prevents the cliff-edge scenario where everything needs replacement at once.',
+        ],
+        tips: [
+          'Calculate the annual cost of an infrastructure plan over 3 years — the per-year cost of proactive replacement is almost always lower than reactive replacement after a failure',
+          'Consider leasing or device-as-a-service models for workstations — they convert capital expenditure to operational expenditure and include planned replacement',
+          'Before replacing a server, evaluate whether its workloads belong in the cloud — a server refresh is the right time to assess whether on-premise infrastructure is still the right model',
+        ],
+      },
+    ],
+    sources: [
+      { label: 'NIST — Small Business Information Security: The Fundamentals', url: 'https://www.nist.gov/publications/small-business-information-security-fundamentals' },
+      { label: 'CompTIA — IT Infrastructure Best Practices', url: 'https://www.comptia.org/content/guides/what-is-it-infrastructure' },
+      { label: 'Microsoft — Azure Well-Architected Framework', url: 'https://learn.microsoft.com/en-us/azure/well-architected/' },
+      { label: 'CISA — Known Exploited Vulnerabilities Catalog', url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog' },
+    ],
+    videos: [
+      { title: 'IT Infrastructure for Small Business – What You Actually Need', youtubeId: 'qiQR5rTSshw', channel: 'NetworkChuck' },
+      { title: 'Building a Small Business Server Room from Scratch', youtubeId: 'S6jkSABCHao', channel: 'Crosstalk Solutions' },
+    ],
+  },
+
+  // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
     slug: 'computer-tune-up',
     title: 'Why Your Computer Slows Down (And How to Fix It)',
@@ -444,6 +711,7 @@ const articles: Article[] = [
     metaDescription: 'Understand why computers slow down over time, which optimisations actually make a measurable difference, and when an upgrade makes more sense than a clean-up.',
     excerpt: 'Make your slow computer fast again. We clean junk files, optimise startup programs, repair the registry, and tune your system for peak performance.',
     icon: 'zap',
+    coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $59',
     whatsIncluded: ['Startup optimisation', 'Deep junk file cleanup', 'Registry scan and repair', 'Malware check and removal', 'Drive health check', 'Before/after performance report'],
     intro: 'A computer that took 30 seconds to boot when new but now takes 5 minutes is a near-universal experience. This performance degradation isn\'t inevitable or permanent — it has identifiable causes and, in most cases, effective solutions. Understanding why computers slow down helps you focus on the interventions that actually make a measurable difference rather than the many "optimisation" tools that promise much and deliver little.',
@@ -451,9 +719,9 @@ const articles: Article[] = [
       {
         heading: 'The Real Reasons Computers Slow Down',
         paragraphs: [
-          'Startup program accumulation is the single biggest contributor to slow boot times on Windows machines. Every application installed on a computer has the option to add itself to the startup sequence, and most do. After 3–4 years of normal software installation, it\'s common to find 30–50 applications attempting to load at startup — antivirus tools, cloud sync clients, printer utilities, software updaters, browser extensions, and more. The cumulative effect on boot time and available RAM is significant.',
-          'Fragmentation affects traditional hard disk drives (HDDs) in a way that solid-state drives (SSDs) are immune to. As files are created, modified, and deleted, HDDs store file fragments in non-contiguous sectors. Reading a heavily fragmented file requires the read head to physically seek across the disk, adding latency. Windows automatically defragments HDDs on a schedule, but on very full drives, this process is less effective. SSDs use entirely different storage architecture and should never be defragmented.',
-          'Windows feature updates accumulate temporary files, old installation packages, and system restore points that consume significant disk space. A drive running near capacity slows performance because Windows requires free space to operate efficiently — as a rule of thumb, a drive should remain below 85–90% full for optimal performance. Removing Windows Update cleanup files, old version backups, and temporary data can often free tens of gigabytes on a machine that has been running for several years.',
+          'Startup program accumulation is the single biggest contributor to slow boot times on Windows machines. Every application installed on a computer has the option to add itself to the startup sequence, and most do. After 3–4 years of normal software installation, it\'s common to find 30–50 applications attempting to load at startup — antivirus tools, cloud sync clients, printer utilities, software updaters, browser extensions, and more.',
+          'Fragmentation affects traditional hard disk drives (HDDs) in a way that solid-state drives (SSDs) are immune to. As files are created, modified, and deleted, HDDs store file fragments in non-contiguous sectors. Reading a heavily fragmented file requires the read head to physically seek across the disk, adding latency.',
+          'Windows feature updates accumulate temporary files, old installation packages, and system restore points that consume significant disk space. A drive running near capacity slows performance because Windows requires free space to operate efficiently — as a rule of thumb, a drive should remain below 85–90% full for optimal performance.',
         ],
         tips: [
           'Open Task Manager (Ctrl+Shift+Esc) > Startup tab to see which applications load at boot — disable anything you don\'t need immediately',
@@ -464,17 +732,17 @@ const articles: Article[] = [
       {
         heading: 'Optimisations That Actually Work',
         paragraphs: [
-          'Startup management delivers the most immediate and measurable improvement. Reducing startup applications from 40 to 10 can improve boot time by 2–4 minutes on affected machines and reduces background RAM consumption throughout the day. The key is knowing which startup items are necessary (antivirus, cloud sync you actively use) versus vestigial (printer software for a printer you no longer own, updaters for software you\'ve uninstalled).',
-          'Malware detection and removal is frequently the explanation for persistent slowdowns that cleaning and startup management don\'t resolve. Crypto-mining malware in particular pins CPU and GPU utilisation at high levels continuously, causing thermal throttling and dramatically degrading performance across all applications. A thorough scan with multiple tools is warranted for any machine with unexplained high resource usage.',
-          'SSD upgrades deserve a category of their own because their performance impact is transformational rather than incremental. Replacing a 5400 RPM hard drive with an SSD is typically the single most impactful hardware upgrade a computer can receive — boot times drop from 2–5 minutes to 10–30 seconds, application launch times improve 3–10x, and the general responsiveness of the system improves dramatically. For machines under 6 years old with functional hardware, an SSD upgrade often makes more economic sense than replacement.',
+          'Startup management delivers the most immediate and measurable improvement. Reducing startup applications from 40 to 10 can improve boot time by 2–4 minutes on affected machines and reduces background RAM consumption throughout the day.',
+          'Malware detection and removal is frequently the explanation for persistent slowdowns that cleaning and startup management don\'t resolve. Crypto-mining malware in particular pins CPU and GPU utilisation at high levels continuously, causing thermal throttling and dramatically degrading performance across all applications.',
+          'SSD upgrades deserve a category of their own because their performance impact is transformational rather than incremental. Replacing a 5400 RPM hard drive with an SSD is typically the single most impactful hardware upgrade a computer can receive — boot times drop from 2–5 minutes to 10–30 seconds, application launch times improve 3–10x.',
         ],
       },
       {
         heading: 'When Cleaning Isn\'t Enough: Upgrade vs. Replace',
         paragraphs: [
-          'Optimisation has limits. A computer with 4GB of RAM running Windows 11 will be slow regardless of how clean the system is — modern operating systems and applications simply require more. The question is whether the hardware can be upgraded economically. Adding RAM and replacing an HDD with an SSD typically costs $100–250 and can extend a machine\'s useful life by 3–5 years. If the machine is already at maximum supported RAM and has an SSD, optimisation and a fresh Windows installation are the remaining options.',
-          'A clean Windows installation — formatted drive, fresh OS, reinstalled applications — eliminates all accumulated software cruft in one operation. It\'s the most thorough performance restoration possible and is appropriate when incremental optimisation hasn\'t resolved the problem. The downside is the time investment in reinstalling and configuring all applications, which is why it\'s typically a last resort rather than a first response.',
-          'CPU performance is not upgradeable in most modern laptops (the CPU is soldered to the board), and desktop CPU upgrades are limited by socket compatibility with the existing motherboard. If CPU performance is the bottleneck — evidenced by consistent high CPU usage across multiple tasks even after startup optimisation — upgrading the entire system is usually more cost-effective than a CPU upgrade alone.',
+          'Optimisation has limits. A computer with 4GB of RAM running Windows 11 will be slow regardless of how clean the system is — modern operating systems and applications simply require more. The question is whether the hardware can be upgraded economically.',
+          'A clean Windows installation — formatted drive, fresh OS, reinstalled applications — eliminates all accumulated software cruft in one operation. It\'s the most thorough performance restoration possible and is appropriate when incremental optimisation hasn\'t resolved the problem.',
+          'CPU performance is not upgradeable in most modern laptops (the CPU is soldered to the board), and desktop CPU upgrades are limited by socket compatibility with the existing motherboard. If CPU performance is the bottleneck, upgrading the entire system is usually more cost-effective than a CPU upgrade alone.',
         ],
         tips: [
           'Check RAM usage in Task Manager with your normal applications open — if you\'re consistently above 80% RAM usage, adding memory will have a noticeable effect',
@@ -495,6 +763,7 @@ const articles: Article[] = [
     ],
   },
 
+  // ── B2B ──────────────────────────────────────────────────────────────────
   {
     slug: 'business-it-support',
     title: 'Managed IT Services for Small Business: A Decision Guide',
@@ -502,6 +771,7 @@ const articles: Article[] = [
     metaDescription: 'Understand the real cost of IT downtime, how managed IT services compare to in-house support, and what a proactive IT strategy should include for small and medium businesses.',
     excerpt: 'Proactive managed IT support for small and medium businesses — helpdesk, network monitoring, security patching, and technology consulting.',
     icon: 'briefcase',
+    coverImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $149/mo per user',
     whatsIncluded: ['Unlimited helpdesk support (per plan)', 'Network monitoring and alerting', 'Security patching and updates', 'Monthly IT health reports', 'Priority on-site response', 'Dedicated account technician'],
     intro: 'For small and medium businesses, technology has shifted from a supporting function to a core operational dependency. When your network goes down, your CRM is inaccessible, or a ransomware attack encrypts your files, business stops. The question isn\'t whether your business needs reliable IT support — it\'s whether the current approach is proactive enough to prevent problems before they cause downtime.',
@@ -509,9 +779,9 @@ const articles: Article[] = [
       {
         heading: 'The Real Cost of IT Downtime',
         paragraphs: [
-          'IT downtime is consistently underestimated by small business owners because the costs are distributed across categories that aren\'t always directly attributable to the outage. Direct costs include lost sales and billable hours during the outage period. Indirect costs include employee productivity loss (staff unable to work or working inefficiently on workarounds), recovery labour, potential data reconstruction, and customer trust damage that may result in churn.',
+          'IT downtime is consistently underestimated by small business owners because the costs are distributed across categories that aren\'t always directly attributable to the outage. Direct costs include lost sales and billable hours during the outage period. Indirect costs include employee productivity loss, recovery labour, potential data reconstruction, and customer trust damage that may result in churn.',
           'According to CompTIA\'s IT Industry Outlook, SMBs are reducing on-premises infrastructure in favour of as-a-service offerings — but this shift increases dependence on internet connectivity and cloud platforms, making network reliability more critical than ever. A single 4-hour outage at a 10-person business commonly eliminates a full day\'s productive output across the team.',
-          'Ransomware represents the most severe downtime scenario. The 2024 Verizon Data Breach Investigations Report found that roughly one-third of all breaches involved ransomware or extortion techniques. Small businesses are disproportionately targeted because they are perceived as having valuable data but weaker security than enterprise organisations. Prevention through proactive IT management — patching, endpoint monitoring, and staff training — is orders of magnitude cheaper than recovery.',
+          'Ransomware represents the most severe downtime scenario. The 2024 Verizon Data Breach Investigations Report found that roughly one-third of all breaches involved ransomware or extortion techniques. Small businesses are disproportionately targeted because they are perceived as having valuable data but weaker security than enterprise organisations.',
         ],
         tips: [
           'Calculate your hourly revenue and multiply by the number of hours your team couldn\'t work in the last year due to IT issues — this is your downtime cost',
@@ -522,17 +792,17 @@ const articles: Article[] = [
       {
         heading: 'In-House IT vs. Managed Services: An Honest Comparison',
         paragraphs: [
-          'A junior in-house IT staff member costs $45,000–65,000 in salary plus benefits, recruiting costs, and training — and provides single-person coverage with no redundancy for vacations, illness, or resignation. This single person is unlikely to have deep expertise across networking, cybersecurity, cloud infrastructure, end-user support, and hardware repair simultaneously. Managed service providers (MSPs) provide a team of specialists across all these domains for a fraction of that cost.',
+          'A junior in-house IT staff member costs $45,000–65,000 in salary plus benefits, recruiting costs, and training — and provides single-person coverage with no redundancy for vacations, illness, or resignation. Managed service providers (MSPs) provide a team of specialists across all these domains for a fraction of that cost.',
           'The comparison is more nuanced for mid-sized companies (50–250 employees) where a dedicated IT person or small team starts to make economic sense. Even in these cases, a hybrid model — in-house IT for day-to-day user support with an MSP providing specialised security, network management, and strategic advisory — often delivers better outcomes than a purely in-house approach.',
-          'The quality and reliability of MSPs vary significantly. The key differentiators are response time guarantees (SLAs), the breadth of their technical expertise, whether they take a purely reactive or genuinely proactive approach, and how they handle major incidents. Ask prospective MSPs for their average ticket resolution time, their process for handling ransomware incidents, and references from clients in similar industries to yours.',
+          'The quality and reliability of MSPs vary significantly. The key differentiators are response time guarantees (SLAs), the breadth of their technical expertise, whether they take a purely reactive or genuinely proactive approach, and how they handle major incidents.',
         ],
       },
       {
         heading: 'What a Proactive IT Strategy Looks Like',
         paragraphs: [
-          'A reactive IT approach waits for things to break and then fixes them. A proactive approach monitors systems continuously, identifies degradation before it becomes failure, applies security patches before vulnerabilities are exploited, and plans capacity based on business growth. The difference in outcomes is substantial — proactive managed services typically reduce incident frequency significantly compared to break-fix support.',
-          'Core components of proactive IT management include remote monitoring and management (RMM) — software agents on all endpoints that report health metrics, available updates, and anomalous behaviour in real time. Security patch management ensures operating system and application vulnerabilities are addressed within agreed windows (24 hours for critical patches, 7 days for high-severity). Managed endpoint detection and response (EDR) provides threat detection capabilities beyond standard antivirus.',
-          'Business continuity and disaster recovery (BCDR) planning is a component that many small businesses neglect until it\'s too late. A complete BCDR strategy defines recovery time objectives (RTO — how quickly systems must be restored) and recovery point objectives (RPO — how much data loss is acceptable), tests backup restoration regularly, and ensures backups are stored in a location that would survive the same event (fire, flood, ransomware) that caused the primary data loss.',
+          'A reactive IT approach waits for things to break and then fixes them. A proactive approach monitors systems continuously, identifies degradation before it becomes failure, applies security patches before vulnerabilities are exploited, and plans capacity based on business growth.',
+          'Core components of proactive IT management include remote monitoring and management (RMM) — software agents on all endpoints that report health metrics, available updates, and anomalous behaviour in real time. Security patch management ensures operating system and application vulnerabilities are addressed within agreed windows.',
+          'Business continuity and disaster recovery (BCDR) planning is a component that many small businesses neglect until it\'s too late. A complete BCDR strategy defines recovery time objectives (RTO) and recovery point objectives (RPO), tests backup restoration regularly, and ensures backups are stored in a location that would survive the same event that caused the primary data loss.',
         ],
         tips: [
           'Ask any MSP prospect how often they test backup restoration — a backup that has never been tested is not a backup you can rely on',
@@ -553,6 +823,7 @@ const articles: Article[] = [
     ],
   },
 
+  // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
     slug: 'password-recovery',
     title: 'Password Recovery & Account Access: What Your Options Are',
@@ -560,6 +831,7 @@ const articles: Article[] = [
     metaDescription: 'A guide to recovering access to locked Windows computers, Microsoft accounts, and BitLocker drives — including what works, what doesn\'t, and how to prevent lockouts.',
     excerpt: 'Locked out of your Windows PC, email, or accounts? Our technicians safely restore access to your computer and critical data without data loss.',
     icon: 'key',
+    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
     pricing: 'Starting at $55',
     whatsIncluded: ['Ownership verification for security', 'Data-safe recovery methods', 'Windows local and Microsoft account support', 'BitLocker recovery assistance', 'New password setup and documentation', 'Account security review and recommendations'],
     intro: 'Account lockouts and forgotten passwords are among the most disruptive and frustrating IT problems a user can encounter — particularly when they prevent access to critical work files, business systems, or years of personal data. The appropriate recovery method depends on the account type, whether the device is encrypted, and whether you have access to recovery options that were set up in advance.',
@@ -567,30 +839,30 @@ const articles: Article[] = [
       {
         heading: 'Windows Local Accounts vs. Microsoft Accounts',
         paragraphs: [
-          'Windows 10 and 11 offer two primary account types with fundamentally different recovery paths. A local account exists only on the specific computer — it has no connection to Microsoft\'s servers. A Microsoft account (signed in with an @outlook, @hotmail, or @live email address) is cloud-connected and offers more recovery options. Understanding which type of account you have is the essential first diagnostic step.',
-          'Microsoft account recovery is handled through Microsoft\'s account recovery portal. If you have access to a recovery email address, phone number, or authenticator app linked to the account, recovery is typically self-service. If all recovery options are inaccessible, Microsoft\'s account recovery form asks security questions about the account\'s history — recent emails, contacts, and Microsoft services used. This process can take 24–72 hours and is not guaranteed to succeed if insufficient account history information is provided.',
-          'Local account recovery on Windows 10 and 11 requires physical access to the machine and typically involves booting from external media. The process varies depending on whether Windows was installed with standard settings or whether additional security configurations (like a BIOS password) have been applied. Local account recovery that preserves all data is possible in most cases but requires specific technical steps that vary by Windows version and configuration.',
+          'Windows 10 and 11 offer two primary account types with fundamentally different recovery paths. A local account exists only on the specific computer. A Microsoft account (signed in with an @outlook, @hotmail, or @live email address) is cloud-connected and offers more recovery options.',
+          'Microsoft account recovery is handled through Microsoft\'s account recovery portal. If you have access to a recovery email address, phone number, or authenticator app linked to the account, recovery is typically self-service.',
+          'Local account recovery on Windows 10 and 11 requires physical access to the machine and typically involves booting from external media. Local account recovery that preserves all data is possible in most cases but requires specific technical steps that vary by Windows version and configuration.',
         ],
         tips: [
           'Set up recovery email and phone number for your Microsoft account now — these are your primary recovery options if you ever get locked out',
           'Windows Hello PIN failures after an update are common; try signing in with your full Microsoft account password instead of the PIN first',
-          'Take note of the 48-digit BitLocker recovery key when prompted during setup — store it in Microsoft account, print it, or save it in a secure location',
+          'Take note of the 48-digit BitLocker recovery key when prompted during setup — store it in your Microsoft account, print it, or save it in a secure location',
         ],
       },
       {
         heading: 'BitLocker: The Encryption Challenge',
         paragraphs: [
-          'BitLocker is Windows\' built-in full-disk encryption. When enabled, it encrypts the entire drive contents and requires authentication to decrypt at startup. BitLocker is enabled by default on Windows 11 devices that meet TPM 2.0 requirements — which means many users have BitLocker active without ever explicitly enabling it. A hardware change (like a motherboard replacement or BIOS update) can trigger BitLocker\'s protection mode and require a recovery key to proceed.',
-          'The 48-digit BitLocker recovery key is the only way to access a BitLocker-protected drive if the normal authentication method fails. Microsoft automatically saves this key to your Microsoft account when BitLocker is enabled via the default Windows setup — it can be retrieved from account.microsoft.com/devices under the "Recovery keys" section. If the drive was encrypted manually by an IT administrator, the key may have been saved to Active Directory or a local backup.',
-          'Without the recovery key, a BitLocker-encrypted drive is computationally infeasible to decrypt. This is by design — the encryption is strong enough that even professional data recovery services cannot bypass it without the key. This is why understanding where your recovery key is stored is essential before you need it, not after.',
+          'BitLocker is Windows\' built-in full-disk encryption. When enabled, it encrypts the entire drive contents and requires authentication to decrypt at startup. BitLocker is enabled by default on Windows 11 devices that meet TPM 2.0 requirements — which means many users have BitLocker active without ever explicitly enabling it.',
+          'The 48-digit BitLocker recovery key is the only way to access a BitLocker-protected drive if the normal authentication method fails. Microsoft automatically saves this key to your Microsoft account when BitLocker is enabled via the default Windows setup.',
+          'Without the recovery key, a BitLocker-encrypted drive is computationally infeasible to decrypt. This is by design — the encryption is strong enough that even professional data recovery services cannot bypass it without the key.',
         ],
       },
       {
         heading: 'Building Better Password Habits',
         paragraphs: [
-          'The fundamental tension in password security is memorability versus strength. Passwords that are easy to remember tend to be easy to guess or crack; passwords that are cryptographically strong are difficult to remember and lead to the reuse and recording practices that undermine them. Password managers — Bitwarden, 1Password, LastPass — resolve this tension by generating and storing unique, strong passwords for every account, protected by a single master password.',
-          'The NIST Special Publication 800-63B-4 password guidelines now recommend a minimum length of 15 characters and explicitly advise against mandatory periodic password changes in the absence of a breach. NIST also advises against complex composition rules (the "must include uppercase, number, and symbol" pattern) — which lead to predictable patterns like "Password1!" rather than genuine randomness. Length and uniqueness are more important than complexity.',
-          'Multi-factor authentication (MFA) is the single most impactful account security measure available. Even if your password is compromised, MFA prevents an attacker from logging in without access to your second factor (typically a code from an authenticator app or SMS message). Enable MFA on every account that offers it, prioritising email accounts (which can be used to reset all other accounts), financial accounts, and business systems.',
+          'The fundamental tension in password security is memorability versus strength. Password managers — Bitwarden, 1Password, LastPass — resolve this tension by generating and storing unique, strong passwords for every account, protected by a single master password.',
+          'The NIST Special Publication 800-63B-4 password guidelines now recommend a minimum length of 15 characters and explicitly advise against mandatory periodic password changes in the absence of a breach.',
+          'Multi-factor authentication (MFA) is the single most impactful account security measure available. Even if your password is compromised, MFA prevents an attacker from logging in without access to your second factor.',
         ],
         tips: [
           'Check haveibeenpwned.com — if your email address appears in data breaches, change affected passwords immediately',
@@ -608,6 +880,71 @@ const articles: Article[] = [
     videos: [
       { title: 'Forgot Your Windows 11 Password? Reset it EASY!', youtubeId: 'TTN9aTuo8ck', channel: 'Unboxing ASMR' },
       { title: 'Reset Forgotten Windows 11/10 password in 3 minutes', youtubeId: 'ZK5mzXPlEHc', channel: 'NETVN82' },
+    ],
+  },
+
+  // ── B2B ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'business-cybersecurity-strategy',
+    title: 'Building a Cybersecurity Strategy for Your Business: A Practical Guide',
+    badge: 'Cybersecurity',
+    metaDescription: 'A practical guide to building a cybersecurity strategy for small and mid-sized businesses — covering threat assessment, endpoint protection, access controls, and compliance frameworks.',
+    excerpt: 'Cybersecurity is no longer optional for businesses of any size. A practical guide to building a programme that actually reduces risk.',
+    icon: 'lock',
+    coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80',
+    pricing: 'Starting at $299/mo',
+    whatsIncluded: ['Threat and vulnerability assessment', 'Endpoint protection deployment', 'Access control configuration', 'Security awareness training', 'Compliance gap analysis', 'Incident response planning'],
+    intro: 'Cybersecurity is no longer a concern exclusive to large enterprises. According to the 2024 Verizon Data Breach Investigations Report, small businesses accounted for a significant portion of confirmed data breaches — and the average cost of a breach for a small business now exceeds $120,000 when factoring in downtime, recovery, regulatory fines, and reputational damage. Most small business breaches are not the result of sophisticated attacks — they exploit basic security gaps that are entirely preventable.',
+    sections: [
+      {
+        heading: 'Start With a Threat Assessment',
+        paragraphs: [
+          'Before investing in security tools, a business needs to understand its actual risk profile. A threat assessment identifies the systems and data that are most valuable or most vulnerable, maps the ways an attacker could reach them, and prioritises the gaps that represent the highest risk. Without this baseline, security spending is guesswork.',
+          'Common findings in small business threat assessments include unpatched software and operating systems, weak or reused passwords across business accounts, absence of multi-factor authentication on email and cloud systems, misconfigured firewall rules, and employee endpoints without endpoint detection and response (EDR) software.',
+          'CISA publishes a free Cyber Hygiene Vulnerability Scanning service for small businesses, and NIST provides a Cybersecurity Framework that is widely used as the baseline assessment structure across industries.',
+        ],
+        tips: [
+          'Run a free CISA vulnerability scan on your public-facing infrastructure — it takes less than 15 minutes to request',
+          'Audit which employees have administrator-level access to business systems — privilege should be limited to the minimum required',
+          'Check whether your business email uses DMARC, DKIM, and SPF records — these prevent attackers from spoofing your domain in phishing campaigns',
+        ],
+      },
+      {
+        heading: 'The Core Layers of Business Security',
+        paragraphs: [
+          'Effective business cybersecurity is not a single product — it is a set of overlapping controls, each designed to catch what the others miss. Endpoint protection (EDR/antivirus) on every device is the minimum baseline. Modern EDR platforms go significantly beyond traditional antivirus by monitoring behaviour in real time and detecting threats that have never been seen before.',
+          'Access control is frequently the most impactful area for small businesses to address. Multi-factor authentication on email, VPN, and cloud systems eliminates the most common vector for account takeover — stolen or phished passwords. The principle of least privilege ensures every employee has access only to what their role requires.',
+          'Network segmentation separates business-critical systems from general user traffic and guest devices. A compromised employee laptop on a flat network has a direct path to your file server, accounting system, and backup drives. A segmented network with a properly configured firewall requires an attacker to break through multiple barriers.',
+        ],
+        tips: [
+          'Enable MFA on your email system first — email account takeover is the most common entry point for business fraud',
+          'Separate your guest Wi-Fi from your internal business network — they should never be on the same VLAN',
+          'Establish a patching schedule: critical patches within 24 hours, all other patches within 30 days',
+        ],
+      },
+      {
+        heading: 'Compliance, Backup, and Incident Response',
+        paragraphs: [
+          'Depending on your industry, specific compliance frameworks may apply to your business. Healthcare organisations handling patient data are subject to HIPAA. Businesses that accept card payments must comply with PCI DSS. Non-compliance exposes a business to regulatory fines and civil liability — independent of whether a breach actually occurs.',
+          'Backup strategy is your last line of defence against ransomware, hardware failure, and accidental deletion. The 3-2-1 rule remains the industry standard: three copies of your data, on two different media types, with one copy stored off-site or in an immutable cloud backup. Backups should be tested quarterly.',
+          'An incident response plan defines what your business does in the first hours of a security incident — who is notified, what systems are isolated, who handles communication, and how evidence is preserved. A documented plan, reviewed annually, significantly improves outcomes.',
+        ],
+        tips: [
+          'Test your backup restoration process — not just the backup job — at least once per quarter',
+          'Document your incident response contacts: IT provider, cyber insurance carrier, legal counsel, and relevant regulatory bodies',
+          'Review your cyber liability insurance policy annually — coverage limits and exclusions change, and many policies have specific security requirements to remain valid',
+        ],
+      },
+    ],
+    sources: [
+      { label: 'Verizon — 2024 Data Breach Investigations Report', url: 'https://www.verizon.com/business/resources/reports/dbir/' },
+      { label: 'CISA — Free Cybersecurity Services for Small Businesses', url: 'https://www.cisa.gov/resources-tools/resources/free-cybersecurity-services-and-tools' },
+      { label: 'NIST — Cybersecurity Framework', url: 'https://www.nist.gov/cyberframework' },
+      { label: 'FTC — Cybersecurity for Small Business', url: 'https://www.ftc.gov/business-guidance/small-businesses/cybersecurity' },
+    ],
+    videos: [
+      { title: 'Cybersecurity for Small Business — Where to Start', youtubeId: 'inWWhr5tnEA', channel: 'CISA' },
+      { title: 'How Hackers Attack Small Businesses (And How to Stop Them)', youtubeId: 'aO858HyFbKI', channel: 'NetworkChuck' },
     ],
   },
 ]

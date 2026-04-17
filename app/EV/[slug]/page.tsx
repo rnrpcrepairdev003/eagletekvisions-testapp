@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import Icon from '@/components/Icon'
 import { getArticleBySlug, getAllArticles } from '@/lib/articles'
@@ -56,6 +57,24 @@ export default function ArticlePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ── COVER IMAGE ──────────────────────────────── */}
+      {article.coverImage && (
+        <div className="bg-[#111111]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0">
+            <div className="relative w-full h-64 sm:h-[360px] overflow-hidden rounded-b-2xl shadow-lg">
+              <Image
+                src={article.coverImage}
+                alt={article.title}
+                fill
+                className="object-cover opacity-90"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── ARTICLE BODY ─────────────────────────────── */}
       <div className="bg-[#f7f7f7]">
@@ -182,7 +201,7 @@ export default function ArticlePage({ params }: Props) {
                 <Link href="/contact" className="block bg-[#e87c5a] hover:bg-[#d06848] text-white text-center font-semibold py-3 rounded-xl transition-colors text-sm">
                   Book This Service
                 </Link>
-                <p className="text-[#aaaaaa] text-xs text-center mt-3">Free diagnostic. No obligation.</p>
+                <p className="text-[#aaaaaa] text-xs text-center mt-3">No obligation. No commitment.</p>
               </div>
             </aside>
           </div>

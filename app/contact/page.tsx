@@ -11,18 +11,26 @@ const contactMethods = [
 ]
 
 const services = [
-  'Computer Repair', 'Virus & Malware Removal', 'Data Recovery', 'Laptop Repair',
-  'Screen Replacement', 'Network Setup', 'Remote Support', 'Password Recovery',
-  'Computer Tune-Up', 'Business IT / Managed IT', 'AI Consulting', 'Cloud Solutions',
-  'API Integration', 'Cybersecurity', 'Other',
+  'Managed IT Services',
+  'IT Infrastructure & Network Design',
+  'Cloud Migration & Management',
+  'Cybersecurity Assessment & Programme',
+  'AI Consulting & Automation',
+  'Server & Infrastructure Deployment',
+  'Microsoft 365 / Google Workspace',
+  'Data Recovery & Business Continuity',
+  'Remote IT Support',
+  'API Integration',
+  'IT Strategy & Consulting',
+  'Other',
 ]
 
 const trustPoints = [
-  'Free diagnostic on all repair services',
-  '90-day warranty on all repairs',
-  'No fix, no fee on data recovery',
-  'Transparent pricing — no surprises',
-  'Certified technicians',
+  'Complimentary initial IT assessment',
+  '90-day service guarantee on all delivered work',
+  'Outcome-based, transparent pricing',
+  'No vendor quotas — vendor-neutral recommendations',
+  'Certified engineers and IT professionals',
 ]
 
 export default function ContactPage() {
@@ -53,7 +61,7 @@ export default function ContactPage() {
             Let's Talk Technology
           </h1>
           <p className="text-[#aaaaaa] text-lg max-w-2xl mx-auto leading-relaxed">
-            Whether you need a quick repair or a full strategic IT assessment — we're ready to help.
+            Whether you need immediate IT support or a full strategic technology assessment — we&apos;re ready to help.
           </p>
         </div>
       </section>

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Icon from '@/components/Icon'
 import { getAllArticles } from '@/lib/articles'
 
 export const metadata: Metadata = {
-  title: 'IT Support Articles – Eagletek Visions',
-  description: 'Browse our IT support and repair articles — expert guides on computer repair, virus removal, data recovery, network setup, and more.',
+  title: 'IT Knowledge Base – Eagletek Visions',
+  description: 'Technical guides, decision frameworks, and best practices from the Eagletek Visions engineering team — for business owners and IT decision-makers.',
 }
 
 export default function ArticlesPage() {
@@ -17,12 +18,12 @@ export default function ArticlesPage() {
       <section className="hero-dark hero-grid relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e87c5a]/8 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative text-center">
-          <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-4">Support Centre</p>
+          <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-4">Resource Library</p>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6 max-w-3xl mx-auto">
-            IT Support & Repair Articles
+            IT Knowledge Base
           </h1>
           <p className="text-[#aaaaaa] text-lg max-w-2xl mx-auto leading-relaxed">
-            Expert guides on our most common services — from computer repair and virus removal to data recovery and network setup.
+            Technical guides, decision frameworks, and best practices — written by our engineers for business owners and IT decision-makers.
           </p>
         </div>
       </section>
@@ -35,19 +36,46 @@ export default function ArticlesPage() {
               <Link
                 key={article.slug}
                 href={`/EV/${article.slug}`}
-                className="group bg-white border border-[#e0e0e0] rounded-2xl p-7 card-hover flex flex-col shadow-sm"
+                className="group bg-white border border-[#e0e0e0] rounded-2xl card-hover flex flex-col shadow-sm overflow-hidden"
               >
-                <div className="w-11 h-11 bg-[#e87c5a]/10 rounded-xl flex items-center justify-center mb-5">
-                  <Icon name={article.icon} className="w-5 h-5 text-[#e87c5a]" />
+                {/* Cover image */}
+                <div className="relative h-48 w-full overflow-hidden bg-[#111111] shrink-0">
+                  {article.coverImage ? (
+                    <Image
+                      src={article.coverImage}
+                      alt={article.title}
+                      fill
+                      className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <Icon name={article.icon} className="w-12 h-12 text-[#e87c5a]/30" />
+                    </div>
+                  )}
+                  {/* Badge overlay */}
+                  <div className="absolute bottom-3 left-3">
+                    <span className="text-xs font-semibold bg-black/60 text-white px-2.5 py-1 rounded-full backdrop-blur-sm">
+                      {article.badge}
+                    </span>
+                  </div>
                 </div>
-                <h2 className="text-[#1c1c1c] font-bold text-base mb-3 group-hover:text-[#e87c5a] transition-colors leading-snug">
-                  {article.title}
-                </h2>
-                <p className="text-[#666666] text-sm leading-relaxed flex-1">{article.excerpt}</p>
-                <div className="mt-5 pt-5 border-t border-[#eeeeee]">
-                  <span className="text-[#aaaaaa] text-xs group-hover:text-[#e87c5a] transition-colors">
-                    Learn more →
-                  </span>
+
+                {/* Card body */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-7 h-7 bg-[#e87c5a]/10 rounded-lg flex items-center justify-center shrink-0">
+                      <Icon name={article.icon} className="w-3.5 h-3.5 text-[#e87c5a]" />
+                    </div>
+                  </div>
+                  <h2 className="text-[#1c1c1c] font-bold text-sm mb-2 group-hover:text-[#e87c5a] transition-colors leading-snug">
+                    {article.title}
+                  </h2>
+                  <p className="text-[#666666] text-sm leading-relaxed flex-1">{article.excerpt}</p>
+                  <div className="mt-4 pt-4 border-t border-[#eeeeee]">
+                    <span className="text-[#aaaaaa] text-xs group-hover:text-[#e87c5a] transition-colors">
+                      Read article →
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}

@@ -17,9 +17,9 @@ const values = [
 ]
 
 const team = [
-  { name: 'Kyle M.', role: 'Founder & Lead Engineer', description: 'Experienced IT professional and systems engineer with a background in enterprise infrastructure, cybersecurity, and AI integration. Founded Eagletek Visions to bring enterprise-quality IT services to businesses of all sizes.', initials: 'KM' },
-  { name: 'Sarah T.', role: 'AI & Automation Specialist', description: 'Machine learning engineer focused on practical AI deployment — LLM integration, workflow automation, and data pipeline architecture for real-world business use cases.', initials: 'ST' },
-  { name: 'James R.', role: 'Senior Network Engineer', description: 'Certified network architect with 12 years of experience designing secure, high-availability networks for healthcare, finance, and logistics industries.', initials: 'JR' },
+  { name: 'Kyle M.', role: 'Founder & Lead Engineer', description: 'Systems engineer with a background in enterprise infrastructure, cybersecurity, and AI integration. Founded Eagletek Visions to deliver Fortune 500-grade IT capability to small and mid-sized businesses across the Coachella Valley and beyond.', initials: 'KM' },
+  { name: 'Sarah T.', role: 'AI & Automation Engineer', description: 'Machine learning engineer specialising in practical AI deployment for business — LLM integration, intelligent process automation, and data pipeline architecture that delivers measurable operational outcomes.', initials: 'ST' },
+  { name: 'James R.', role: 'Senior Network & Infrastructure Engineer', description: 'Certified network architect with over a decade of experience designing and securing high-availability infrastructure for organisations in healthcare, finance, and professional services.', initials: 'JR' },
 ]
 
 export default function AboutPage() {
@@ -64,17 +64,16 @@ export default function AboutPage() {
                   technology stays secure, efficient, and aligned with their goals.
                 </p>
                 <p>
-                  Whether you need a single laptop repaired today or a full AI-powered business transformation roadmap,
-                  we bring the same commitment to quality, transparency, and long-term thinking to every engagement.
+                  Whether you are a 5-person business that needs a solid IT foundation or a 50-person organisation planning a cloud migration and AI adoption programme, we bring the same commitment to quality, transparency, and long-term thinking to every engagement.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-5">
               {[
-                { number: '500+', label: 'Clients Served' },
-                { number: '99%', label: 'Satisfaction Rate' },
-                { number: '10+', label: 'Years in IT' },
-                { number: '24/7', label: 'Support Available' },
+                { number: '500+', label: 'Business Clients Served' },
+                { number: '99%', label: 'Client Retention Rate' },
+                { number: '10+', label: 'Years in Enterprise IT' },
+                { number: '24/7', label: 'Infrastructure Monitoring' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-white border border-[#eeeeee] rounded-2xl p-8 text-center shadow-sm">
                   <p className="text-4xl font-extrabold text-[#e87c5a] mb-2">{stat.number}</p>
@@ -112,9 +111,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Expertise</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Our Agents Specialise In</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Technical Disciplines</h2>
             <p className="mt-4 text-[#555555] max-w-xl mx-auto">
-              Our technicians cover the full spectrum of business IT — from day-to-day desktop support to enterprise infrastructure and cloud architecture.
+              Our engineers cover the full spectrum of business IT — from day-to-day endpoint management to enterprise infrastructure design and cloud architecture.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -127,7 +126,7 @@ export default function AboutPage() {
               { title: 'Email & Collaboration Platforms', description: 'Microsoft 365 and Google Workspace setup, migration, administration, and security hardening — including email filtering and DLP policies.' },
               { title: 'Printer & Peripheral Management', description: 'Network printer configuration, fleet management, driver deployment, and multifunction device integration with business workflows.' },
               { title: 'Data Recovery & Continuity', description: 'Recovering data from failed drives and corrupted volumes, restoring from backups, and implementing continuity plans to prevent future data loss.' },
-              { title: 'Home Office Consultations', description: 'Designing and optimising home office environments — reliable internet, secure networking, VPN access, and productivity hardware recommendations.' },
+              { title: 'Remote Workforce Infrastructure', description: 'Designing and deploying secure remote work environments — VPN architecture, endpoint management, cloud access policies, and productivity platform configuration for distributed teams.' },
             ].map((area) => (
               <div key={area.title} className="bg-[#f7f7f7] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#e87c5a] mb-4" />

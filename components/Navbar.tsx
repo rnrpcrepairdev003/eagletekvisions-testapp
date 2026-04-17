@@ -3,20 +3,31 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
   { href: '/#pricing', label: 'Pricing' },
+  { href: '/EV/Articles', label: 'Articles' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [visible, setVisible] = useState(false)
   const pathname = usePathname()
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (menuOpen) {
+      requestAnimationFrame(() => setVisible(true))
+    } else {
+      setVisible(false)
+    }
+  }, [menuOpen])
 
   return (
     <nav className="bg-[#1c1c1c] border-b border-[#e0e0e0]/10 sticky top-0 z-50">
@@ -73,10 +84,15 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu — absolute overlay, does not push content */}
         {menuOpen && (
-          <div className="lg:hidden border-t border-[#e0e0e0]/10 py-3 pb-4">
-            <div className="flex flex-col gap-1">
+          <div
+            ref={menuRef}
+            className={`lg:hidden absolute top-full left-0 right-0 bg-[#1c1c1c] border-t border-[#e0e0e0]/10 shadow-xl py-3 pb-4 z-50 transition-all duration-300 ease-out ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+            }`}
+          >
+            <div className="flex flex-col gap-1 px-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

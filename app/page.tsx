@@ -4,84 +4,97 @@ import Icon from '@/components/Icon'
 const plans = [
   {
     name: 'Starter',
-    price: '$149',
+    price: '$299',
     period: '/mo',
-    description: 'Perfect for sole traders and very small teams who need occasional IT support.',
+    description: 'For small businesses and sole operators who need reliable IT oversight without the overhead.',
     highlight: false,
-    features: ['Up to 3 users', 'Remote helpdesk (business hours)', 'Antivirus and endpoint management', 'Monthly security patch report', 'Email and chat support', '4-hour response SLA'],
+    features: ['Up to 5 users', 'Business-hours helpdesk', 'Endpoint monitoring & management', 'Monthly security patch cycle', 'Email and priority chat support', '4-hour response SLA'],
     cta: 'Get Started',
   },
   {
     name: 'Professional',
     price: '$149',
     period: '/mo per user',
-    description: 'For growing SMBs that need proactive IT management and faster support.',
+    description: 'For growing organisations that need proactive IT management and a dedicated technical resource.',
     highlight: true,
-    features: ['5–25 users', 'Remote + on-site helpdesk', 'Proactive monitoring & alerting', 'Security patching and updates', 'Microsoft 365 / Google Workspace admin', '2-hour response SLA', 'Monthly IT health report', 'Dedicated account technician'],
+    features: ['5–25 users', 'Remote and on-site helpdesk', 'Proactive monitoring and alerting', 'Security patching and compliance updates', 'Microsoft 365 / Google Workspace admin', '2-hour response SLA', 'Monthly IT health report', 'Dedicated account technician'],
     cta: 'Start Free Trial',
   },
   {
     name: 'Enterprise',
     price: 'Custom',
     period: '',
-    description: 'Fully managed IT for larger organisations with complex infrastructure needs.',
+    description: 'Fully managed IT for larger organisations with complex infrastructure and compliance requirements.',
     highlight: false,
-    features: ['Unlimited users', '24/7 helpdesk and monitoring', 'On-site and remote support', 'Custom SLA agreements', 'vCIO strategic advisory', 'Compliance programme management', 'Disaster recovery planning', 'Dedicated engineering team'],
+    features: ['Unlimited users', '24/7 helpdesk and infrastructure monitoring', 'On-site and remote support', 'Custom SLA agreements', 'vCIO strategic advisory', 'Compliance programme management (SOC 2, HIPAA, NIST)', 'Disaster recovery and business continuity planning', 'Dedicated engineering team'],
     cta: 'Contact Sales',
   },
 ]
 
 const services = [
-  { id: 'ai-consulting', iconName: 'cpu', title: 'AI Consulting', description: 'Integrate AI and machine learning into your business workflows to automate processes, surface insights, and gain a competitive edge.' },
-  { id: 'it-infrastructure', iconName: 'server', title: 'IT Infrastructure', description: 'Design, deploy, and manage scalable IT infrastructure — from on-premise servers to hybrid cloud environments.' },
-  { id: 'project-management', iconName: 'clipboard', title: 'Project Management', description: 'Expert technology project management to keep complex IT initiatives on time, on budget, and aligned with business goals.' },
-  { id: 'api-integration', iconName: 'link', title: 'API Integration', description: 'Connect your business systems, third-party platforms, and data sources through robust, secure API integrations.' },
-  { id: 'data-security', iconName: 'lock', title: 'Data Security', description: 'Protect your business with enterprise-grade cybersecurity — threat assessment, compliance, and continuous monitoring.' },
-  { id: 'cloud-solutions', iconName: 'cloud', title: 'Cloud Solutions', description: 'Migrate to and optimise cloud environments on AWS, Azure, or Google Cloud for cost savings and business agility.' },
+  { id: 'ai-consulting', iconName: 'cpu', title: 'AI Consulting', description: 'Identify, evaluate, and deploy AI solutions that deliver measurable business outcomes — from workflow automation to LLM integration and custom data pipelines.' },
+  { id: 'it-infrastructure', iconName: 'server', title: 'IT Infrastructure', description: 'Design, deploy, and manage scalable infrastructure — from on-premise server environments to hybrid and full cloud architectures built for reliability.' },
+  { id: 'project-management', iconName: 'clipboard', title: 'Project Management', description: 'Dedicated technology project management to keep complex IT initiatives on schedule, within budget, and aligned with your business objectives.' },
+  { id: 'api-integration', iconName: 'link', title: 'API Integration', description: 'Connect your business systems, SaaS platforms, and internal tools through secure, well-documented API integrations that eliminate silos and manual processes.' },
+  { id: 'data-security', iconName: 'lock', title: 'Cybersecurity', description: 'Protect your organisation with a layered security programme — threat assessment, endpoint protection, compliance frameworks, and continuous monitoring.' },
+  { id: 'cloud-solutions', iconName: 'cloud', title: 'Cloud Solutions', description: 'Plan and execute cloud migrations to AWS, Azure, or Google Cloud. Optimise your existing cloud spend and infrastructure for performance and cost efficiency.' },
 ]
 
 const stats = [
-  { value: '500+', label: 'Clients Served' },
-  { value: '99%', label: 'Satisfaction Rate' },
-  { value: '10+', label: 'Years Experience' },
-  { value: '24/7', label: 'Always Available' },
+  { value: '500+', label: 'Business Clients Served' },
+  { value: '99%', label: 'Client Retention Rate' },
+  { value: '10+', label: 'Years in Enterprise IT' },
+  { value: '24/7', label: 'Infrastructure Monitoring' },
 ]
 
 const whyUs = [
-  { iconName: 'zap', title: 'Rapid Deployment', description: 'Most engagements and projects are delivered same day. We respect your time and deadlines.' },
-  { iconName: 'shield', title: 'Enterprise Security', description: 'Every engagement follows security-first principles — your data never leaves your control.' },
-  { iconName: 'document', title: 'Transparent Pricing', description: 'No hidden fees. Detailed quotes before any work begins — you approve everything.' },
-  { iconName: 'award', title: 'Certified Experts', description: 'Our team holds industry certifications and stays current with the latest technology.' },
-  { iconName: 'refresh', title: '90-Day SLA Guarantee', description: 'All project work is backed by a 90-day service guarantee. We stand behind our quality.' },
-  { iconName: 'headset', title: 'Dedicated Account Manager', description: 'One point of contact for your organisation — direct access to your team, no runaround.' },
+  { iconName: 'zap', title: 'Same-Day Deployment', description: 'Most engagements are scoped, approved, and active within one business day. We move at the pace your business requires.' },
+  { iconName: 'shield', title: 'Security-First by Default', description: 'Every engagement is designed around a secure baseline. Your data, systems, and access controls are hardened before anything goes live.' },
+  { iconName: 'document', title: 'Fully Transparent Pricing', description: 'Detailed written quotes before any work begins. No retainer surprises, no scope creep invoices — you approve everything in advance.' },
+  { iconName: 'award', title: 'Certified Technical Staff', description: 'Our engineers hold current industry certifications across Microsoft, Cisco, AWS, and cybersecurity disciplines.' },
+  { iconName: 'refresh', title: '90-Day Service Guarantee', description: 'Every project we deliver is backed by a 90-day guarantee. If it does not perform to spec, we fix it at no additional cost.' },
+  { iconName: 'headset', title: 'Dedicated Account Manager', description: 'One senior point of contact for your organisation — direct access, no ticket queues, no call centres, no escalation runaround.' },
 ]
 
 export default function HomePage() {
   return (
     <>
-      {/* ── DARK HERO ────────────────────────────────── */}
-      <section className="hero-dark hero-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#e87c5a]/8 via-transparent to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-28 text-center relative">
-          <div className="inline-flex items-center gap-2 bg-[#e87c5a]/10 border border-[#e87c5a]/30 rounded-full px-4 py-1.5 text-[#e87c5a] text-sm font-medium mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e87c5a] animate-pulse" />
-            Enterprise IT & AI Solutions
+      {/* ── HERO WITH VIDEO ──────────────────────────── */}
+      <section className="relative overflow-hidden bg-black">
+
+        {/* Background video */}
+        <video
+          src="/company-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        />
+
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60 pointer-events-none" />
+
+        {/* Hero content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-36 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#e87c5a]/10 border border-[#e87c5a]/30 rounded-full px-4 py-1.5 text-[#e87c5a] text-xs sm:text-sm font-medium mb-8 whitespace-nowrap">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#e87c5a] animate-pulse shrink-0" />
+            Managed IT &amp; AI Consulting — Palm Desert, CA
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-4xl mx-auto">
-            Technology That{' '}
-            <span className="text-[#e87c5a]">Elevates</span>{' '}
-            Your Business
+            Enterprise IT That{' '}
+            <span className="text-[#e87c5a]">Works</span>{' '}
+            for Your Business
           </h1>
           <p className="mt-6 text-lg text-[#aaaaaa] max-w-2xl mx-auto leading-relaxed">
-            From AI consulting and cloud infrastructure to cybersecurity and digital transformation — Eagletek Visions
-            is the technology partner that grows with you.
+            Eagletek Visions delivers managed IT services, AI consulting, and cybersecurity programmes to businesses across the Coachella Valley and beyond — with the accountability of a dedicated local partner.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm">
-              Get a Free Consultation
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 w-full max-w-sm mx-auto sm:max-w-none sm:flex-row">
+            <Link href="/contact" className="w-full sm:w-auto bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm text-center">
+              Schedule a Free Consultation
             </Link>
-            <Link href="/services" className="border border-white/20 hover:border-white/40 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm">
-              Explore Services
+            <Link href="/services" className="w-full sm:w-auto border border-white/20 hover:border-white/40 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm text-center">
+              View Our Services
             </Link>
           </div>
         </div>
@@ -101,88 +114,81 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── COMPANY VIDEO ────────────────────────────── */}
-      <section className="relative bg-[#0d0d0d] py-24 overflow-hidden">
-        {/* Subtle background grid */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        {/* Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e87c5a]/5 rounded-full blur-3xl pointer-events-none" />
+      {/* ── QUICK CONTACT FORM ───────────────────────── */}
+      <section className="bg-[#111111] border-b border-white/5 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Section label + heading */}
-          <div className="text-center mb-12">
-            <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.25em] mb-3">Who We Are</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-              See Eagletek Visions in Action
-            </h2>
-            <p className="text-[#555555] text-sm max-w-lg mx-auto leading-relaxed">
-              A short look at how we work, who we serve, and what sets our approach apart from every other IT firm in the valley.
-            </p>
-          </div>
-
-          {/* Video frame */}
-          <div className="relative max-w-4xl mx-auto">
-
-            {/* Outer glow ring */}
-            <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-[#e87c5a]/30 via-transparent to-[#e87c5a]/10" />
-
-            {/* Frame */}
-            <div className="relative rounded-2xl overflow-hidden bg-[#111111] border border-[#2a2a2a]">
-
-              {/* 16:9 placeholder */}
-              <div className="relative w-full pb-[56.25%]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
-
-                  {/* Cinematic scan lines overlay */}
-                  <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #ffffff 2px, #ffffff 3px)', backgroundSize: '100% 4px' }} />
-
-                  {/* Corner marks */}
-                  {['top-4 left-4', 'top-4 right-4', 'bottom-4 left-4', 'bottom-4 right-4'].map((pos, i) => (
-                    <div key={i} className={`absolute ${pos} w-6 h-6 border-[#e87c5a]/40 ${i < 2 ? 'border-t' : 'border-b'} ${i % 2 === 0 ? 'border-l' : 'border-r'}`} />
-                  ))}
-
-                  {/* Play button */}
-                  <div className="relative z-10 flex flex-col items-center gap-5">
-                    <div className="w-20 h-20 rounded-full border-2 border-[#e87c5a]/50 flex items-center justify-center bg-[#e87c5a]/10 backdrop-blur-sm">
-                      <svg className="w-8 h-8 text-[#e87c5a] translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-white text-sm font-semibold mb-1">Company Overview</p>
-                      <p className="text-[#444444] text-xs">Video coming soon</p>
-                    </div>
+            {/* Left — copy */}
+            <div>
+              <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-widest mb-3">Request a Consultation</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                Let's Assess Your IT Environment
+              </h2>
+              <p className="text-[#888888] text-sm leading-relaxed mb-8">
+                Tell us about your organisation and we will respond within one business day with a tailored assessment — no obligation, no sales pressure.
+              </p>
+              <div className="space-y-3">
+                {[
+                  'Complimentary initial IT assessment',
+                  'Written quote provided before any engagement',
+                  '90-day service guarantee on all deliverables',
+                  'Mon–Sat 9AM–6PM · (760) 469-9070',
+                ].map((pt) => (
+                  <div key={pt} className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-[#e87c5a] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-[#888888] text-sm">{pt}</span>
                   </div>
-
-                  {/* Bottom bar — simulated video controls */}
-                  <div className="absolute bottom-0 inset-x-0 px-5 py-3 bg-gradient-to-t from-black/80 to-transparent flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-[#e87c5a]/60" />
-                    <div className="flex-1 h-px bg-[#333333] relative">
-                      <div className="absolute left-0 top-0 h-full w-0 bg-[#e87c5a]/40 rounded-full" />
-                    </div>
-                    <span className="text-[#555555] text-xs font-mono">0:00</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-          </div>
 
-          {/* Three callouts below the video */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#1e1e1e] border border-[#1e1e1e] rounded-2xl overflow-hidden mt-6 max-w-4xl mx-auto">
-            {[
-              { label: 'Runtime', value: '~2 Min', sub: 'Concise company overview' },
-              { label: 'Coverage', value: '6 Topics', sub: 'Services · Team · Process · Results' },
-              { label: 'Available', value: 'Coming Soon', sub: 'Production in progress' },
-            ].map((item) => (
-              <div key={item.label} className="bg-[#0f0f0f] px-7 py-5 text-center">
-                <p className="text-[#555555] text-xs uppercase tracking-widest mb-1">{item.label}</p>
-                <p className="text-white font-extrabold text-lg mb-0.5">{item.value}</p>
-                <p className="text-[#444444] text-xs">{item.sub}</p>
+            {/* Right — form */}
+            <form className="bg-white border border-[#eeeeee] rounded-2xl p-8 shadow-sm space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full bg-white border border-[#e0e0e0] text-[#1c1c1c] placeholder-[#aaaaaa] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e87c5a] transition-colors"
+                />
+                <input
+                  type="email"
+                  placeholder="Business Email"
+                  className="w-full bg-white border border-[#e0e0e0] text-[#1c1c1c] placeholder-[#aaaaaa] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e87c5a] transition-colors"
+                />
               </div>
-            ))}
-          </div>
+              <input
+                type="text"
+                placeholder="Company Name"
+                className="w-full bg-white border border-[#e0e0e0] text-[#1c1c1c] placeholder-[#aaaaaa] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e87c5a] transition-colors"
+              />
+              <select className="w-full bg-white border border-[#e0e0e0] text-[#555555] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e87c5a] transition-colors">
+                <option value="">Area of Interest</option>
+                <option>Managed IT Services</option>
+                <option>AI Consulting &amp; Automation</option>
+                <option>Cybersecurity Assessment</option>
+                <option>Cloud Migration</option>
+                <option>IT Infrastructure</option>
+                <option>API Integration</option>
+                <option>On-Site AI Systems</option>
+                <option>Other</option>
+              </select>
+              <textarea
+                rows={4}
+                placeholder="Briefly describe your current IT environment or challenge..."
+                className="w-full bg-white border border-[#e0e0e0] text-[#1c1c1c] placeholder-[#aaaaaa] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e87c5a] transition-colors resize-none"
+              />
+              <button
+                type="submit"
+                className="w-full bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
+              >
+                Request Assessment
+              </button>
+            </form>
 
+          </div>
         </div>
       </section>
 
@@ -190,16 +196,14 @@ export default function HomePage() {
       <section className="bg-[#0a0a0a] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Header */}
           <div className="text-center mb-14">
-            <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.25em] mb-3">Commercial AI and Server Solutions</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Next-Generation Infrastructure</h2>
+            <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.25em] mb-3">Hardware &amp; AI Solutions</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Purpose-Built Business Technology</h2>
             <p className="text-[#666666] text-sm max-w-xl mx-auto">
-              Next-generation AI systems and server platforms designed for private, secure, and high-performance operations.
+              Custom-configured server infrastructure and private AI systems — engineered for performance, security, and long-term reliability.
             </p>
           </div>
 
-          {/* Two product columns */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#222222] border border-[#222222] rounded-2xl overflow-hidden">
 
             {/* Column 1 — Business Server */}
@@ -207,10 +211,10 @@ export default function HomePage() {
               <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.2em] mb-6">Business Server Solutions</p>
               <div className="space-y-5 flex-1">
                 {[
-                  { title: 'Built for Your Workload', body: 'Every server is spec\'d and assembled around your specific needs — whether that\'s file sharing, internal applications, hosted services, or heavy compute.' },
-                  { title: 'Secured Before It Leaves Our Hands', body: 'Firewall rules, access controls, and hardening are configured by our engineers before deployment. Your server arrives ready for business, not just powered on.' },
-                  { title: 'Run Multiple Environments on One Machine', body: 'Virtualisation lets you run isolated systems side-by-side — separate your dev, staging, and production environments without buying separate hardware.' },
-                  { title: 'Tower or Rack — Your Choice', body: 'We supply and configure both desktop tower and rack-mount form factors. Choose what fits your office or server room without compromise.' },
+                  { title: 'Built for Your Workload', body: 'Every server is spec\'d and assembled around your specific requirements — file sharing, internal applications, hosted services, or high-performance compute.' },
+                  { title: 'Secured Before Deployment', body: 'Firewall rules, access controls, and system hardening are completed by our engineers before handover. Your infrastructure arrives production-ready.' },
+                  { title: 'Virtualised Multi-Environment Support', body: 'Run isolated development, staging, and production environments on a single machine — without the cost of separate hardware for each.' },
+                  { title: 'Tower and Rack Form Factors Available', body: 'We supply and configure both desktop tower and rack-mount hardware. We match the form factor to your office layout or server room specification.' },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#e87c5a] mt-2 shrink-0" />
@@ -225,7 +229,7 @@ export default function HomePage() {
                 <div>
                   <p className="text-[#555555] text-xs mb-1">Starting at</p>
                   <p className="text-white text-2xl font-extrabold">$1,999</p>
-                  <p className="text-[#555555] text-xs mt-1">Custom-built. Quoted before any work begins.</p>
+                  <p className="text-[#555555] text-xs mt-1">Fully quoted before any work begins.</p>
                 </div>
                 <Link href="/contact" className="shrink-0 bg-[#e87c5a] hover:bg-[#d06848] text-white text-xs font-bold px-5 py-2.5 rounded-lg transition-colors uppercase tracking-wide">
                   Get a Quote
@@ -235,13 +239,13 @@ export default function HomePage() {
 
             {/* Column 2 — On-Site AI */}
             <div className="bg-[#0f0f0f] p-10 flex flex-col">
-              <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.2em] mb-6">On-Site AI Infrastructure</p>
+              <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-[0.2em] mb-6">On-Premise AI Infrastructure</p>
               <div className="space-y-5 flex-1">
                 {[
-                  { title: 'AI That Runs Inside Your Business', body: 'Stop sending sensitive prompts to third-party cloud models. We build and deploy local AI systems that run entirely on your hardware — your data never leaves your network.' },
-                  { title: 'Practical Performance at a Business Price', body: 'Configured for real workloads — document summarisation, internal search, code assistance, and custom automation — without enterprise cloud subscription costs.' },
-                  { title: 'More Than an AI Box', body: 'The same machine can host internal tools, act as a workstation server, or run virtualised environments. One piece of hardware, multiple functions.' },
-                  { title: 'Connects to Your Existing Stack', body: 'We integrate your on-site AI with your existing applications via API — no rewrites, no migrations, just new capability on top of what you already use.' },
+                  { title: 'Private AI — Your Data Stays On-Site', body: 'Eliminate third-party cloud AI exposure. We deploy local language model infrastructure that runs entirely on your hardware, inside your network perimeter.' },
+                  { title: 'Configured for Real Business Workloads', body: 'Document processing, internal knowledge search, workflow automation, and code assistance — without recurring cloud subscription costs.' },
+                  { title: 'Multi-Function Hardware Platform', body: 'The same machine serves as an AI inference server, internal application host, and virtualised workstation environment simultaneously.' },
+                  { title: 'API-First Integration Architecture', body: 'Your on-premise AI connects to existing business applications through standard REST and WebSocket APIs — no migration required.' },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#e87c5a] mt-2 shrink-0" />
@@ -256,7 +260,7 @@ export default function HomePage() {
                 <div>
                   <p className="text-[#555555] text-xs mb-1">Starting at</p>
                   <p className="text-white text-2xl font-extrabold">$2,500</p>
-                  <p className="text-[#555555] text-xs mt-1">Spec depends on model size and concurrency requirements.</p>
+                  <p className="text-[#555555] text-xs mt-1">Scoped to your model size and concurrency requirements.</p>
                 </div>
                 <Link href="/contact" className="shrink-0 bg-[#e87c5a] hover:bg-[#d06848] text-white text-xs font-bold px-5 py-2.5 rounded-lg transition-colors uppercase tracking-wide">
                   Get a Quote
@@ -273,14 +277,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── MANAGED IT SERVICES ──────────────────────── */}
+      <section className="py-24 bg-white border-y border-[#eeeeee]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Managed IT Services</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">A Full Technology Function — Without the Overhead</h2>
+            <p className="mt-4 text-[#555555] max-w-2xl mx-auto text-sm leading-relaxed">
+              Eagletek Visions acts as your outsourced IT department — handling infrastructure, security, compliance, and day-to-day technical operations so your team can focus on the business.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <Link
+                key={service.id}
+                href={`/services#${service.id}`}
+                className="group bg-white border border-[#eeeeee] rounded-2xl p-7 card-hover"
+              >
+                <div className="w-11 h-11 bg-[#e87c5a]/10 rounded-xl flex items-center justify-center mb-5">
+                  <Icon name={service.iconName} className="w-5 h-5 text-[#e87c5a]" />
+                </div>
+                <h3 className="text-[#1c1c1c] font-bold text-lg mb-2 group-hover:text-[#e87c5a] transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-[#666666] text-sm leading-relaxed">{service.description}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/services" className="inline-flex items-center gap-2 text-[#e87c5a] hover:text-[#d06848] font-medium text-sm transition-colors">
+              View full service catalogue →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── WHY US ───────────────────────────────────── */}
       <section className="py-24 bg-[#f7f7f7] border-y border-[#eeeeee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Why Eagletek</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Built Different</h2>
+            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Why Eagletek Visions</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">What Sets Us Apart</h2>
             <p className="mt-4 text-[#555555] max-w-xl mx-auto">
-              We combine enterprise-level expertise with the personal service of a dedicated local partner.
+              Enterprise-grade capability with the accountability and responsiveness of a dedicated local partner.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -304,22 +343,22 @@ export default function HomePage() {
             <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Transparent Pricing</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Managed IT Plans</h2>
             <p className="mt-4 text-[#555555] max-w-xl mx-auto">
-              Predictable monthly plans — no hidden fees, no lock-in. Cancel anytime.
+              Predictable monthly investment with no hidden fees, no lock-in contracts, and a 90-day service guarantee on all deliverables.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {plans.map((plan) => (
               <div
                 key={plan.name}
                 className={`rounded-2xl p-8 flex flex-col relative ${
                   plan.highlight
-                    ? 'bg-[#e87c5a] border border-[#d06848] shadow-lg'
+                    ? 'bg-[#e87c5a] border border-[#d06848] shadow-lg mt-4 lg:mt-0'
                     : 'bg-white border border-[#e0e0e0] shadow-sm'
                 }`}
               >
                 {plan.highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-[#1c1c1c] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                    <span className="bg-[#1c1c1c] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-md">
                       Most Popular
                     </span>
                   </div>
@@ -374,10 +413,10 @@ export default function HomePage() {
             <div>
               <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-4">Our Location</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c] mb-6">
-                Based in Palm Desert, CA
+                Serving the Coachella Valley and Beyond
               </h2>
               <p className="text-[#555555] text-sm leading-relaxed mb-8">
-                We serve businesses throughout the Coachella Valley and Inland Empire — and provide remote IT services nationwide. Whether you need on-site support or a fully managed remote engagement, we have you covered.
+                Headquartered in Palm Desert, CA — we provide on-site IT services throughout the Coachella Valley and Inland Empire, and fully managed remote services to businesses nationwide.
               </p>
               <div className="space-y-4 text-sm text-[#555555]">
                 <div className="flex items-start gap-3">
@@ -397,15 +436,15 @@ export default function HomePage() {
                   <svg className="w-4 h-4 text-[#e87c5a] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>Mon–Sat &nbsp;9:00 AM – 6:00 PM</span>
+                  <span>Monday – Saturday &nbsp;9:00 AM – 6:00 PM</span>
                 </div>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm text-center">
-                  Get in Touch
+                  Schedule a Consultation
                 </Link>
                 <a href="tel:+17604699070" className="border border-[#e0e0e0] hover:border-[#e87c5a] text-[#555555] hover:text-[#e87c5a] font-semibold px-6 py-3 rounded-xl transition-colors text-sm text-center">
-                  Call Now
+                  Call Our Office
                 </a>
               </div>
             </div>
@@ -428,13 +467,18 @@ export default function HomePage() {
       {/* ── CTA ──────────────────────────────────────── */}
       <section className="py-20 bg-[#1c1c1c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready to Elevate Your Technology?</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready to Strengthen Your IT Operations?</h2>
           <p className="text-[#aaaaaa] max-w-xl mx-auto mb-8">
-            Book a free consultation and find out how Eagletek Visions can transform your IT operations.
+            Book a free, no-obligation consultation with our team. We will review your current environment and recommend a programme that fits your business — not a one-size-fits-all package.
           </p>
-          <Link href="/contact" className="inline-flex bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm">
-            Schedule Your Free Consultation
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/contact" className="inline-flex bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm">
+              Schedule a Free Consultation
+            </Link>
+            <a href="tel:+17604699070" className="border border-white/20 hover:border-white/40 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors text-sm">
+              Call (760) 469-9070
+            </a>
+          </div>
         </div>
       </section>
     </>
