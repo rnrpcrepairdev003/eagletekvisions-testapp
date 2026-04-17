@@ -63,13 +63,13 @@ export default function FloatingActions() {
           />
           {/* Menu panel */}
           <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-            <div className="pointer-events-auto bg-[#1a1a1a] border border-[#2e2e2e] rounded-2xl shadow-2xl overflow-hidden w-72 max-h-[80vh] flex flex-col">
+            <div className="pointer-events-auto bg-[#1a1a1a] border border-[#2e2e2e] rounded-2xl shadow-2xl overflow-hidden w-80 max-w-[92vw] flex flex-col max-h-[82vh]">
               {/* Header */}
               <div className="px-6 py-4 border-b border-[#2e2e2e] flex items-center justify-between shrink-0">
                 <span className="text-white text-sm font-bold uppercase tracking-widest">Navigation</span>
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="text-[#666666] hover:text-white transition-colors"
+                  className="text-[#555555] hover:text-white transition-colors"
                   aria-label="Close menu"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -78,8 +78,14 @@ export default function FloatingActions() {
                 </button>
               </div>
 
-              {/* Scrollable link list */}
-              <div className="overflow-y-auto">
+              {/* Scrollable list with styled scrollbar */}
+              <div
+                className="overflow-y-auto"
+                style={{
+                  scrollbarWidth: 'thin',
+                  scrollbarColor: '#e87c5a #1a1a1a',
+                }}
+              >
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -88,7 +94,7 @@ export default function FloatingActions() {
                     className="flex items-center justify-between px-6 py-3.5 text-sm text-[#bbbbbb] hover:text-white hover:bg-[#242424] transition-colors border-b border-[#242424]"
                   >
                     <span>{link.label}</span>
-                    <svg className="w-3.5 h-3.5 text-[#444444]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-3.5 h-3.5 text-[#3a3a3a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
@@ -96,7 +102,7 @@ export default function FloatingActions() {
 
                 {/* Divider */}
                 <div className="px-6 py-2.5 bg-[#111111] border-b border-[#2e2e2e]">
-                  <span className="text-[#555555] text-xs font-bold uppercase tracking-widest">Computer Services</span>
+                  <span className="text-[#e87c5a]/60 text-xs font-bold uppercase tracking-widest">Computer Services</span>
                 </div>
 
                 {serviceLinks.map((link) => (
@@ -107,7 +113,7 @@ export default function FloatingActions() {
                     className="flex items-center justify-between px-6 py-3.5 text-sm text-[#bbbbbb] hover:text-white hover:bg-[#242424] transition-colors border-b border-[#242424] last:border-0"
                   >
                     <span>{link.label}</span>
-                    <svg className="w-3.5 h-3.5 text-[#444444]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-3.5 h-3.5 text-[#3a3a3a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
