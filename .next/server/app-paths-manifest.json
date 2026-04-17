@@ -1,9 +1,9 @@
 {
-  "/pricing/page": "app/pricing/page.js",
-  "/articles/page": "app/articles/page.js",
   "/page": "app/page.js",
-  "/articles/[slug]/page": "app/articles/[slug]/page.js",
-  "/services/page": "app/services/page.js",
   "/about/page": "app/about/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/services/page": "app/services/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/EV/Articles/page": "app/EV/Articles/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/EV/[slug]/page": "app/EV/[slug]/page.js"
 }

@@ -10,21 +10,20 @@ const services = [
   { href: '/services#cloud-solutions', label: 'Cloud Solutions' },
 ]
 
-const support = [
-  { href: '/articles/computer-repair', label: 'Computer Repair' },
-  { href: '/articles/virus-removal', label: 'Virus Removal' },
-  { href: '/articles/data-recovery', label: 'Data Recovery' },
-  { href: '/articles/laptop-repair', label: 'Laptop Repair' },
-  { href: '/articles/remote-support', label: 'Remote Support' },
-  { href: '/articles/network-setup', label: 'Network Setup' },
-]
-
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/articles', label: 'Articles' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/EV/Articles', label: 'Articles' },
   { href: '/contact', label: 'Contact Us' },
+]
+
+const knowledgeBase = [
+  { href: '/EV/business-it-support', label: 'Managed IT Services for Small Business: A Decision Guide' },
+  { href: '/EV/data-recovery', label: 'Data Recovery: How to Respond When You Lose Critical Files' },
+  { href: '/EV/password-recovery', label: 'Password Recovery & Account Access: What Your Options Are' },
+  { href: '/EV/network-setup', label: 'Home and Business Network Architecture: A Practical Guide' },
 ]
 
 export default function Footer() {
@@ -90,14 +89,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support Articles */}
+          {/* Knowledge Base */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Support & Repair</h3>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Knowledge Base</h3>
             <ul className="space-y-2.5">
-              {support.map((s) => (
-                <li key={s.href}>
-                  <Link href={s.href} className="text-[#aaaaaa] hover:text-[#e87c5a] text-sm transition-colors">
-                    {s.label}
+              {knowledgeBase.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-[#aaaaaa] hover:text-[#e87c5a] text-sm transition-colors leading-snug block">
+                    {item.label}
                   </Link>
                 </li>
               ))}

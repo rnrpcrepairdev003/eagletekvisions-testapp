@@ -107,6 +107,38 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── SPECIALIST AREAS ─────────────────────────── */}
+      <section className="py-24 bg-white border-b border-[#eeeeee]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Expertise</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Our Agents Specialise In</h2>
+            <p className="mt-4 text-[#555555] max-w-xl mx-auto">
+              Our technicians cover the full spectrum of business IT — from day-to-day desktop support to enterprise infrastructure and cloud architecture.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { title: 'Hardware & Software Troubleshooting', description: 'Diagnosing and resolving hardware failures, OS issues, driver conflicts, and application errors across Windows, macOS, and Linux environments.' },
+              { title: 'Network Setup & Architecture', description: 'Designing and deploying wired and wireless networks for home offices and business premises — including VLANs, firewalls, and secure Wi-Fi infrastructure.' },
+              { title: 'Desktop IT Management', description: 'Endpoint provisioning, imaging, patch management, user account administration, and day-to-day desktop support for business workforces.' },
+              { title: 'Server Infrastructure', description: 'On-premise and hybrid server deployment, Active Directory, virtualisation (VMware, Hyper-V), and ongoing server administration and monitoring.' },
+              { title: 'Network Storage & Backup', description: 'NAS deployment, cloud backup configuration (Backblaze, Azure, AWS S3), disaster recovery planning, and automated backup verification.' },
+              { title: 'Email & Collaboration Platforms', description: 'Microsoft 365 and Google Workspace setup, migration, administration, and security hardening — including email filtering and DLP policies.' },
+              { title: 'Printer & Peripheral Management', description: 'Network printer configuration, fleet management, driver deployment, and multifunction device integration with business workflows.' },
+              { title: 'Data Recovery & Continuity', description: 'Recovering data from failed drives and corrupted volumes, restoring from backups, and implementing continuity plans to prevent future data loss.' },
+              { title: 'Home Office Consultations', description: 'Designing and optimising home office environments — reliable internet, secure networking, VPN access, and productivity hardware recommendations.' },
+            ].map((area) => (
+              <div key={area.title} className="bg-[#f7f7f7] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-[#e87c5a] mb-4" />
+                <h3 className="text-[#1c1c1c] font-bold text-sm mb-2">{area.title}</h3>
+                <p className="text-[#666666] text-sm leading-relaxed">{area.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── TEAM ─────────────────────────────────────── */}
       <section className="py-24 bg-white border-b border-[#eeeeee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
