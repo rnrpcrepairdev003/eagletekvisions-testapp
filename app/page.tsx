@@ -1,5 +1,42 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Icon from '@/components/Icon'
+
+export const metadata: Metadata = {
+  title: 'Managed IT Services & AI Consulting | Palm Desert, CA',
+  description: 'Eagletek Visions — managed IT services, AI consulting, and cybersecurity for businesses in Palm Desert and the Coachella Valley. 90-day guarantee, no lock-in contracts.',
+  openGraph: {
+    title: 'Managed IT Services & AI Consulting | Eagletek Visions',
+    description: 'Enterprise IT services for growing businesses in Palm Desert, CA — managed IT, AI consulting, cybersecurity, and cloud solutions with local accountability.',
+  },
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://eagletekvisions.com/#website',
+  name: 'Eagletek Visions',
+  url: 'https://eagletekvisions.com',
+  publisher: { '@id': 'https://eagletekvisions.com/#organization' },
+}
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://eagletekvisions.com/#managed-it',
+  name: 'Managed IT Services',
+  provider: { '@id': 'https://eagletekvisions.com/#organization' },
+  areaServed: { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: 33.7557, longitude: -116.3234 }, geoRadius: '150000' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Managed IT & AI Consulting Plans',
+    itemListElement: [
+      { '@type': 'Offer', name: 'Starter Managed IT', price: '299', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingIncrement: 1, unitCode: 'MON' } },
+      { '@type': 'Offer', name: 'Professional Managed IT', price: '149', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingIncrement: 1, unitCode: 'MON' } },
+      { '@type': 'Offer', name: 'Enterprise Managed IT', price: '0', priceCurrency: 'USD', description: 'Custom pricing — contact for quote' },
+    ],
+  },
+}
 
 const plans = [
   {
@@ -59,6 +96,8 @@ const whyUs = [
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {/* ── HERO WITH VIDEO ──────────────────────────── */}
       <section className="relative overflow-hidden bg-black">
 
@@ -188,6 +227,85 @@ export default function HomePage() {
               </button>
             </form>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPUTER SERVICES PRICING ────────────────── */}
+      <section className="py-20 bg-white border-b border-[#eeeeee]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">On-Demand Services</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Computer Services &amp; Pricing</h2>
+            <p className="mt-4 text-[#555555] max-w-xl mx-auto">
+              Choose a skill set that fits your needs. All services are billed per hour with no hidden fees.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 rounded-2xl overflow-hidden border border-[#e0e0e0] shadow-sm">
+            {[
+              {
+                name: 'Systems Associate',
+                highlight: false,
+                features: [
+                  'Hardware Assessment & Component Service',
+                  'OS Provisioning & Configuration',
+                  'Peripheral Deployment & Cabling',
+                  'Connectivity Baseline Verification',
+                ],
+                price: 75,
+              },
+              {
+                name: 'IT Systems Engineer',
+                highlight: true,
+                features: [
+                  'Endpoint Security Evaluation & Hardening',
+                  'Data Migration & Media Restoration',
+                  'Infrastructure Configuration & Deployment',
+                  'Off-Site Session Delivery (Encrypted)',
+                ],
+                price: 110,
+              },
+              {
+                name: 'Senior IT Consultant',
+                highlight: false,
+                features: [
+                  'Advanced Infrastructure Architecture',
+                  'Security Posture Evaluation & Hardening',
+                  'Custom Automation & Workflow Scripting',
+                  'Compliance Framework Implementation',
+                ],
+                price: 150,
+              },
+            ].map((tier) => (
+              <div key={tier.name} className="flex flex-col">
+                <div className={`px-8 py-5 text-center ${tier.highlight ? 'bg-[#e87c5a]' : 'bg-[#1c1c1c]'}`}>
+                  {tier.highlight && (
+                    <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Most Requested</p>
+                  )}
+                  <h3 className="text-white font-bold text-base">{tier.name}</h3>
+                </div>
+                {tier.features.map((f, i) => (
+                  <div
+                    key={f}
+                    className={`px-6 py-3.5 text-center text-sm border-b border-[#eeeeee] ${i % 2 === 0 ? 'bg-white' : 'bg-[#fafafa]'} text-[#444444]`}
+                  >
+                    {f}
+                  </div>
+                ))}
+                <div className="px-6 py-7 text-center bg-white border-b border-[#eeeeee] flex-1 flex flex-col items-center justify-end gap-3">
+                  <div>
+                    <span className="text-4xl font-extrabold text-[#1c1c1c]">${tier.price}</span>
+                    <p className="text-[#888888] text-xs mt-1">per hour</p>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className={`mt-2 w-full text-center font-semibold py-2.5 rounded-xl text-sm transition-colors ${tier.highlight ? 'bg-[#e87c5a] hover:bg-[#d06848] text-white' : 'border border-[#e0e0e0] hover:border-[#e87c5a] text-[#444444] hover:text-[#e87c5a]'}`}
+                  >
+                    Book a Session
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -339,8 +457,10 @@ export default function HomePage() {
       {/* ── PRICING ──────────────────────────────────── */}
       <section id="pricing" className="py-24 bg-white border-y border-[#eeeeee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Managed IT Plans */}
           <div className="text-center mb-14">
-            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Transparent Pricing</p>
+            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Managed Services</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">Managed IT Plans</h2>
             <p className="mt-4 text-[#555555] max-w-xl mx-auto">
               Predictable monthly investment with no hidden fees, no lock-in contracts, and a 90-day service guarantee on all deliverables.

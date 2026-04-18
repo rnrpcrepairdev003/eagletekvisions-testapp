@@ -2,8 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'FAQ – Eagletek Visions',
-  description: 'Frequently asked questions about Eagletek Visions managed IT services, pricing, onboarding, and business hours.',
+  title: 'FAQ | Managed IT Services Questions Answered',
+  description: 'Answers to common questions about Eagletek Visions — managed IT pricing, onboarding process, response times, service coverage, and contract terms.',
+  openGraph: {
+    title: 'FAQ | Eagletek Visions Managed IT Services',
+    description: 'Common questions about our managed IT services, AI consulting, pricing, and onboarding — answered by the Eagletek Visions team.',
+  },
 }
 
 const faqSections = [
@@ -56,9 +60,22 @@ const hours = [
   { day: 'Sunday', time: 'Closed' },
 ]
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqSections.flatMap((section) =>
+    section.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    }))
+  ),
+}
+
 export default function FaqPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* ── DARK HERO ────────────────────────────────── */}
       <section className="hero-dark hero-grid relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e87c5a]/8 via-transparent to-transparent pointer-events-none" />

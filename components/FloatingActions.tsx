@@ -13,16 +13,16 @@ const navLinks = [
 ]
 
 const serviceLinks = [
-  { href: '/EV/computer-repair', label: 'Computer Repair' },
-  { href: '/EV/virus-removal', label: 'Virus Removal' },
-  { href: '/EV/data-recovery', label: 'Data Recovery' },
-  { href: '/EV/laptop-repair', label: 'Laptop Repair' },
-  { href: '/EV/screen-replacement', label: 'Screen Replacement' },
-  { href: '/EV/network-setup', label: 'Network Setup' },
-  { href: '/EV/remote-support', label: 'Remote Support' },
-  { href: '/EV/computer-tune-up', label: 'Computer Tune-Up' },
-  { href: '/EV/business-it-support', label: 'Business IT Support' },
-  { href: '/EV/password-recovery', label: 'Password Recovery' },
+  { href: '/EV/workstation-assessment-and-service', label: 'Workstation Assessment & Service' },
+  { href: '/EV/endpoint-threat-remediation', label: 'Endpoint Security & Threat Remediation' },
+  { href: '/EV/data-loss-and-recovery', label: 'Data Restoration Service' },
+  { href: '/EV/laptop-hardware-service-guide', label: 'Mobile Workstation Service' },
+  { href: '/EV/display-component-replacement', label: 'Display Component Replacement' },
+  { href: '/EV/network-deployment-and-security', label: 'Network Deployment & Security' },
+  { href: '/EV/off-site-it-services-guide', label: 'Off-Site IT Services' },
+  { href: '/EV/system-performance-engineering', label: 'System Performance Engineering' },
+  { href: '/EV/business-it-services', label: 'Managed IT Services' },
+  { href: '/EV/account-access-recovery-guide', label: 'Account Access Recovery' },
 ]
 
 export default function FloatingActions() {

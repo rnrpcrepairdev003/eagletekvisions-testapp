@@ -15,6 +15,12 @@ export interface ArticleVideo {
   channel: string
 }
 
+export interface ArticleInlineImage {
+  afterSection: number
+  src: string
+  alt: string
+}
+
 export interface Article {
   slug: string
   title: string
@@ -28,6 +34,7 @@ export interface Article {
   pricing: string
   icon: string
   coverImage: string
+  inlineImages?: ArticleInlineImage[]
   whatsIncluded: string[]
 }
 
@@ -41,6 +48,10 @@ const articles: Article[] = [
     excerpt: 'Is hiring an in-house IT employee actually cheaper than a managed IT provider? A full breakdown of the real costs most businesses overlook.',
     icon: 'chart',
     coverImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80', alt: 'IT professional reviewing business technology strategy' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80', alt: 'Corporate office IT environment with workstations' },
+    ],
     pricing: 'From $149/mo per user',
     whatsIncluded: ['Full IT department capabilities', 'Proactive monitoring and management', 'Dedicated account manager', 'Compliance and security programme', '2-hour response SLA', 'Monthly IT health reports'],
     intro: 'One of the most common questions business owners ask when evaluating IT support options is whether it makes more financial sense to hire an in-house IT employee or outsource to a managed service provider. On the surface, the decision appears straightforward — but when you account for the full cost of employment and the structural limitations of a single-person IT function, the comparison looks very different.',
@@ -94,13 +105,17 @@ const articles: Article[] = [
 
   // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
-    slug: 'computer-repair',
+    slug: 'workstation-assessment-and-service',
     title: 'Professional Computer Repair: What You Need to Know',
     badge: 'Hardware & Software Repair',
     metaDescription: 'Learn when to repair vs. replace your computer, how to identify hardware vs. software failures, and what to expect from a professional repair service.',
     excerpt: 'Fast, reliable computer repair for desktops and laptops. Certified technicians, transparent pricing, and a 90-day guarantee on all repairs.',
     icon: 'monitor',
     coverImage: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80', alt: 'Laptop screen and keyboard on a professional desk' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1548092372-0d1bd40894a3?auto=format&fit=crop&w=1200&q=80', alt: 'Computer hardware components laid out on a surface' },
+    ],
     pricing: 'Starting at $65',
     whatsIncluded: ['Free initial diagnosis', 'Certified technician service', 'Quality OEM or equivalent parts', '90-day repair warranty', 'Data backup before repairs begin', 'Post-repair system testing'],
     intro: 'Your computer is one of the most complex and frequently used pieces of technology you own. When something goes wrong — whether it refuses to boot, runs unbearably slow, or makes alarming noises — understanding the problem and knowing your options can save you both time and money.',
@@ -161,6 +176,10 @@ const articles: Article[] = [
     excerpt: 'Moving to the cloud can cut costs, improve uptime, and enable remote work — but only if the migration is planned correctly. Here\'s how to do it right.',
     icon: 'cloud',
     coverImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80', alt: 'Cloud computing infrastructure architecture visualization' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80', alt: 'Developer working with cloud systems and infrastructure' },
+    ],
     pricing: 'From $2,500 per project',
     whatsIncluded: ['Cloud readiness assessment', 'Migration strategy and timeline', 'Workload migration and validation', 'Security and access configuration', 'Cost optimisation setup', 'Staff training and documentation'],
     intro: 'Cloud migration is one of the most impactful technology decisions a small or mid-sized business can make — and one of the easiest to get wrong. When executed well, moving workloads to the cloud reduces infrastructure costs, improves disaster recovery capabilities, and enables the flexible, remote-accessible work environment that modern businesses require. When executed poorly, it creates unexpected costs, performance degradation, and security gaps that can take months to untangle.',
@@ -212,20 +231,24 @@ const articles: Article[] = [
       { label: 'CompTIA — State of the Channel: Cloud Computing Trends', url: 'https://www.comptia.org/content/research/state-of-the-channel' },
     ],
     videos: [
-      { title: 'Cloud Migration Strategy for Small Business', youtubeId: 'M988_fsOSWo', channel: 'Microsoft Azure' },
-      { title: 'What is Cloud Migration? Strategies & Best Practices', youtubeId: 'NooBl23T0Vc', channel: 'IBM Technology' },
+      { title: 'What is Cloud Migration?', youtubeId: 'yWByEVB0VJE', channel: 'IBM Technology' },
+      { title: 'What is Cloud Migration? A Beginner\'s Guide', youtubeId: 'ZITvsRAvCc8', channel: 'Simplilearn' },
     ],
   },
 
   // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
-    slug: 'virus-removal',
+    slug: 'endpoint-threat-remediation',
     title: 'Virus & Malware Removal: A Complete Guide',
     badge: 'Security & System Cleanup',
     metaDescription: 'Understand the different types of malware, how to recognise an infected system, and why professional removal is more effective than consumer antivirus alone.',
     excerpt: 'Complete virus, malware, ransomware, and spyware removal — with security setup to prevent future infections.',
     icon: 'shield',
     coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80', alt: 'Cybersecurity professional monitoring enterprise systems' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80', alt: 'Digital credential and access management interface' },
+    ],
     pricing: 'Starting at $75',
     whatsIncluded: ['Multi-tool threat scanning', 'Complete malware removal', 'System file repair', 'Browser cleanup and reset', 'Security software installation', 'Prevention tips and walkthrough'],
     intro: 'Malware — a term covering viruses, ransomware, spyware, adware, and a growing roster of other threats — has become one of the most significant technology challenges individuals and businesses face. In 2024, ransomware and extortion techniques were present in roughly one-third of all confirmed data breaches globally, according to Verizon\'s Data Breach Investigations Report. Understanding what you\'re dealing with is the first step toward protecting yourself.',
@@ -278,13 +301,17 @@ const articles: Article[] = [
   },
 
   {
-    slug: 'data-recovery',
+    slug: 'data-loss-and-recovery',
     title: 'Data Recovery: How to Respond When You Lose Critical Files',
     badge: 'Data Recovery & Restoration',
     metaDescription: 'Learn how data loss happens, what to do immediately after a drive failure, when professional recovery is necessary, and how to protect yourself with a solid backup strategy.',
     excerpt: 'Recover lost files, photos, and business data from failed hard drives, SSDs, RAID arrays, and USB drives with high success rates.',
     icon: 'database',
     coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?auto=format&fit=crop&w=1200&q=80', alt: 'Storage media and hard drive components on a desk' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=1200&q=80', alt: 'Business data infrastructure and server workspace' },
+    ],
     pricing: 'Starting at $149',
     whatsIncluded: ['Free device evaluation', 'Sector-by-sector drive imaging', 'Professional recovery tools', 'File integrity verification', 'Secure data delivery', 'No-recovery, no-fee options available'],
     intro: 'Data loss is more common and more devastating than most people expect. According to Backblaze\'s 2024 drive reliability statistics, annualized failure rates vary significantly by drive model and age — and that rate climbs meaningfully in years three and four of a drive\'s life. Whether caused by mechanical failure, accidental deletion, or malware, data loss demands an immediate and informed response — the wrong actions in the first minutes can make recovery impossible.',
@@ -337,13 +364,17 @@ const articles: Article[] = [
   },
 
   {
-    slug: 'laptop-repair',
+    slug: 'laptop-hardware-service-guide',
     title: 'Laptop Repair: Common Failures and What to Expect',
     badge: 'Laptop Hardware Repair',
     metaDescription: 'Understand the most common laptop hardware failures, what causes them, when water damage requires emergency action, and how to evaluate repair costs vs. replacement.',
     excerpt: 'Comprehensive laptop repair services — screens, keyboards, batteries, hinges, ports, and motherboards for all major brands.',
     icon: 'laptop',
     coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1200&q=80', alt: 'Laptop keyboard and trackpad close-up view' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=80', alt: 'Professional working on a laptop at a desk' },
+    ],
     pricing: 'Starting at $79',
     whatsIncluded: ['Free device inspection', 'OEM or equivalent quality parts', 'ESD-safe repair procedures', 'Full system test post-repair', '90-day parts and labour warranty', 'Data safety throughout repair'],
     intro: 'Laptops are precision engineering packed into thin, portable packages that endure more physical stress than virtually any other computing device. Dropped, sat on, spilled on, carried in bags, opened and closed thousands of times — the mechanical demands placed on a laptop are substantial. Understanding the most common failure modes helps you respond appropriately and set realistic expectations for repair outcomes.',
@@ -404,6 +435,10 @@ const articles: Article[] = [
     excerpt: 'Microsoft 365 is more than email. A properly configured and secured M365 tenant is the productivity and security foundation every modern business needs.',
     icon: 'mail',
     coverImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1200&q=80', alt: 'Business professional on a productivity tablet platform' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1569012871812-f38ee64cd54c?auto=format&fit=crop&w=1200&q=80', alt: 'IT professional configuring business software environment' },
+    ],
     pricing: 'From $22/user/mo (licensing + managed setup)',
     whatsIncluded: ['Tenant setup and domain configuration', 'User provisioning and email migration', 'Teams and SharePoint deployment', 'MFA and Conditional Access setup', 'OneDrive and backup configuration', 'Ongoing admin and licence management'],
     intro: 'Microsoft 365 has become the default productivity platform for small and mid-sized businesses — and for good reason. Exchange Online, Teams, SharePoint, OneDrive, and the full suite of Office applications, all managed through a single cloud-based admin centre, provide a complete collaboration and communication infrastructure that would have cost dramatically more to run on-premise a decade ago. But a default Microsoft 365 deployment leaves significant security and productivity value on the table. Getting the configuration right from the start — or cleaning up a poorly configured existing tenant — makes a substantial difference.',
@@ -455,20 +490,24 @@ const articles: Article[] = [
       { label: 'Microsoft — HIPAA and the Microsoft Cloud', url: 'https://learn.microsoft.com/en-us/compliance/regulatory/offering-hipaa-hitech' },
     ],
     videos: [
-      { title: 'Microsoft 365 for Business – Complete Setup Guide', youtubeId: 'pKaLMFyVgaI', channel: 'Kevin Stratvert' },
-      { title: 'Microsoft 365 Security Best Practices for Small Business', youtubeId: 'LD_-3RRpnw0', channel: 'Microsoft 365' },
+      { title: 'Set up Microsoft 365 for Business', youtubeId: 'vwu9397OjHs', channel: 'Microsoft' },
+      { title: 'Protect Your Business: 7 Security Best Practices for Microsoft 365', youtubeId: 'HHokwtSXrv0', channel: 'Microsoft 365' },
     ],
   },
 
   // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
-    slug: 'screen-replacement',
+    slug: 'display-component-replacement',
     title: 'Laptop & Device Screen Replacement: Everything You Need to Know',
     badge: 'Display & Screen Repair',
     metaDescription: 'A guide to screen replacement for laptops and tablets — display types, what affects cost, the risks of DIY replacement, and what professional replacement involves.',
     excerpt: 'Cracked, flickering, or dead display? We replace screens for laptops, tablets, and all-in-one computers — same day in most cases.',
     icon: 'screen',
     coverImage: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=1200&q=80', alt: 'Display panel and screen components on a workbench' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1504707748692-419802cf939d?auto=format&fit=crop&w=1200&q=80', alt: 'IT workspace with multiple display screens' },
+    ],
     pricing: 'Starting at $89',
     whatsIncluded: ['Model-specific screen sourcing', 'Professional ESD-safe installation', 'Touch calibration (where applicable)', 'Dead pixel and brightness testing', '90-day display warranty', 'Same-day service for most models'],
     intro: 'A damaged or failed screen is one of the most disabling hardware problems a laptop user can experience. The display is the primary interface between user and machine — without it, the device is effectively unusable. Fortunately, screen replacement is also one of the most straightforward laptop repairs, and most models can be completed in under an hour by an experienced technician.',
@@ -521,13 +560,17 @@ const articles: Article[] = [
   },
 
   {
-    slug: 'network-setup',
+    slug: 'network-deployment-and-security',
     title: 'Home and Business Network Setup: A Practical Guide',
     badge: 'Networking & Connectivity',
     metaDescription: 'Learn how to plan a home or business network, understand the difference between routers, access points, and mesh systems, and why network security matters more than most people realise.',
     excerpt: 'Home and office network setup, router configuration, WiFi range optimisation, and network security hardening by certified network technicians.',
     icon: 'wifi',
     coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&w=1200&q=80', alt: 'Server rack and network infrastructure in data center' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=1200&q=80', alt: 'Network access and digital security controls' },
+    ],
     pricing: 'Starting at $99',
     whatsIncluded: ['On-site survey and network plan', 'Router and access point configuration', 'WiFi security hardening', 'Guest network setup', 'Full coverage and speed testing', 'Device connection walkthrough'],
     intro: 'Your network is the foundation on which every internet-connected device in your home or business operates. A poorly configured network doesn\'t just mean slow streaming — it means security vulnerabilities that expose every connected device to potential attack, dead zones that make areas of your building unusable, and bottlenecks that limit the performance of otherwise capable hardware.',
@@ -580,13 +623,17 @@ const articles: Article[] = [
   },
 
   {
-    slug: 'remote-support',
+    slug: 'off-site-it-services-guide',
     title: 'Remote Computer Support: How It Works and When to Use It',
     badge: 'Remote IT Support',
     metaDescription: 'Understand how professional remote support works, what it can and cannot fix, how to verify a session is secure, and when remote support is the right choice.',
     excerpt: 'Fast remote support for software issues, virus removal, system slowdowns, and troubleshooting — resolved in minutes from anywhere.',
     icon: 'remote',
     coverImage: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80', alt: 'IT professional delivering services via laptop' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80', alt: 'Engineer working on business systems infrastructure' },
+    ],
     pricing: 'Starting at $55',
     whatsIncluded: ['Fully encrypted remote session', 'Live screen sharing (you watch everything)', 'Issue diagnosis and resolution', 'No software installed permanently', 'Session summary and recommendations', 'Same-day appointments available'],
     intro: 'Remote technical support has become one of the most efficient ways to resolve software issues, configuration problems, and performance problems without the time and inconvenience of an in-person visit. Modern remote support tools provide secure, encrypted connections that allow a technician to see and control your screen in real time — resolving many issues in a fraction of the time an on-site visit would require.',
@@ -647,6 +694,10 @@ const articles: Article[] = [
     excerpt: 'A well-planned IT infrastructure prevents the costly "fix it when it breaks" cycle. Here\'s how to assess what you have and build what your business actually needs.',
     icon: 'server',
     coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1504707748692-419802cf939d?auto=format&fit=crop&w=1200&q=80', alt: 'Business IT infrastructure planning session' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1610986603166-f78428624e76?auto=format&fit=crop&w=1200&q=80', alt: 'Enterprise network and server environment' },
+    ],
     pricing: 'From $1,500 assessment',
     whatsIncluded: ['Current state infrastructure audit', 'Technology gap analysis', 'Infrastructure roadmap (1–3 year)', 'Hardware and software recommendations', 'Budget planning and phasing', 'Implementation project management'],
     intro: 'Most small businesses build their IT infrastructure reactively — adding equipment and services as needs arise, without a coherent long-term plan. The result is a patchwork of mismatched hardware, overlapping software licences, unsupported systems, and security gaps. By the time the problem is obvious, the cost of remediation is significantly higher than a planned approach would have been. IT infrastructure planning is not a luxury reserved for enterprise organisations — it is the most cost-effective way for a growing business to manage technology.',
@@ -698,20 +749,24 @@ const articles: Article[] = [
       { label: 'CISA — Known Exploited Vulnerabilities Catalog', url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog' },
     ],
     videos: [
-      { title: 'IT Infrastructure for Small Business – What You Actually Need', youtubeId: 'qiQR5rTSshw', channel: 'NetworkChuck' },
-      { title: 'Building a Small Business Server Room from Scratch', youtubeId: 'S6jkSABCHao', channel: 'Crosstalk Solutions' },
+      { title: 'Small Office / Home Office Network Build – Selecting Gear and Subnets', youtubeId: '1cRtIp8SBSs', channel: 'Crosstalk Solutions' },
+      { title: 'Small Business Network Tour', youtubeId: 'hwvywTzygsY', channel: 'Crosstalk Solutions' },
     ],
   },
 
   // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
-    slug: 'computer-tune-up',
+    slug: 'system-performance-engineering',
     title: 'Why Your Computer Slows Down (And How to Fix It)',
     badge: 'Performance Optimisation',
     metaDescription: 'Understand why computers slow down over time, which optimisations actually make a measurable difference, and when an upgrade makes more sense than a clean-up.',
     excerpt: 'Make your slow computer fast again. We clean junk files, optimise startup programs, repair the registry, and tune your system for peak performance.',
     icon: 'zap',
     coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1548092372-0d1bd40894a3?auto=format&fit=crop&w=1200&q=80', alt: 'Computer hardware and processor components' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1535191042502-e6a9a3d407e7?auto=format&fit=crop&w=1200&q=80', alt: 'System performance benchmarking environment' },
+    ],
     pricing: 'Starting at $59',
     whatsIncluded: ['Startup optimisation', 'Deep junk file cleanup', 'Registry scan and repair', 'Malware check and removal', 'Drive health check', 'Before/after performance report'],
     intro: 'A computer that took 30 seconds to boot when new but now takes 5 minutes is a near-universal experience. This performance degradation isn\'t inevitable or permanent — it has identifiable causes and, in most cases, effective solutions. Understanding why computers slow down helps you focus on the interventions that actually make a measurable difference rather than the many "optimisation" tools that promise much and deliver little.',
@@ -765,13 +820,17 @@ const articles: Article[] = [
 
   // ── B2B ──────────────────────────────────────────────────────────────────
   {
-    slug: 'business-it-support',
+    slug: 'business-it-services',
     title: 'Managed IT Services for Small Business: A Decision Guide',
     badge: 'Business IT Solutions',
     metaDescription: 'Understand the real cost of IT downtime, how managed IT services compare to in-house support, and what a proactive IT strategy should include for small and medium businesses.',
     excerpt: 'Proactive managed IT support for small and medium businesses — helpdesk, network monitoring, security patching, and technology consulting.',
     icon: 'briefcase',
     coverImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1627163439134-7a8c47e08208?auto=format&fit=crop&w=1200&q=80', alt: 'Business IT services team at work' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80', alt: 'Modern corporate office technology environment' },
+    ],
     pricing: 'Starting at $149/mo per user',
     whatsIncluded: ['Unlimited helpdesk support (per plan)', 'Network monitoring and alerting', 'Security patching and updates', 'Monthly IT health reports', 'Priority on-site response', 'Dedicated account technician'],
     intro: 'For small and medium businesses, technology has shifted from a supporting function to a core operational dependency. When your network goes down, your CRM is inaccessible, or a ransomware attack encrypts your files, business stops. The question isn\'t whether your business needs reliable IT support — it\'s whether the current approach is proactive enough to prevent problems before they cause downtime.',
@@ -825,13 +884,17 @@ const articles: Article[] = [
 
   // ── CONSUMER ─────────────────────────────────────────────────────────────
   {
-    slug: 'password-recovery',
+    slug: 'account-access-recovery-guide',
     title: 'Password Recovery & Account Access: What Your Options Are',
     badge: 'Account & Access Recovery',
     metaDescription: 'A guide to recovering access to locked Windows computers, Microsoft accounts, and BitLocker drives — including what works, what doesn\'t, and how to prevent lockouts.',
     excerpt: 'Locked out of your Windows PC, email, or accounts? Our technicians safely restore access to your computer and critical data without data loss.',
     icon: 'key',
     coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=1200&q=80', alt: 'Digital account and credential access interface' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80', alt: 'Secure authentication and identity management' },
+    ],
     pricing: 'Starting at $55',
     whatsIncluded: ['Ownership verification for security', 'Data-safe recovery methods', 'Windows local and Microsoft account support', 'BitLocker recovery assistance', 'New password setup and documentation', 'Account security review and recommendations'],
     intro: 'Account lockouts and forgotten passwords are among the most disruptive and frustrating IT problems a user can encounter — particularly when they prevent access to critical work files, business systems, or years of personal data. The appropriate recovery method depends on the account type, whether the device is encrypted, and whether you have access to recovery options that were set up in advance.',
@@ -892,6 +955,10 @@ const articles: Article[] = [
     excerpt: 'Cybersecurity is no longer optional for businesses of any size. A practical guide to building a programme that actually reduces risk.',
     icon: 'lock',
     coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1610986603166-f78428624e76?auto=format&fit=crop&w=1200&q=80', alt: 'Cybersecurity strategy and enterprise protection planning' },
+      { afterSection: 1, src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80', alt: 'Business security implementation and monitoring' },
+    ],
     pricing: 'Starting at $299/mo',
     whatsIncluded: ['Threat and vulnerability assessment', 'Endpoint protection deployment', 'Access control configuration', 'Security awareness training', 'Compliance gap analysis', 'Incident response planning'],
     intro: 'Cybersecurity is no longer a concern exclusive to large enterprises. According to the 2024 Verizon Data Breach Investigations Report, small businesses accounted for a significant portion of confirmed data breaches — and the average cost of a breach for a small business now exceeds $120,000 when factoring in downtime, recovery, regulatory fines, and reputational damage. Most small business breaches are not the result of sophisticated attacks — they exploit basic security gaps that are entirely preventable.',

@@ -2,8 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Pricing – Eagletek Visions',
-  description: 'Transparent managed IT pricing for businesses. Proactive support, AI consulting, and enterprise IT services. No hidden fees.',
+  title: 'IT Services Pricing | Managed IT Plans & Per-Hour Rates',
+  description: 'Transparent pricing for managed IT services and on-demand computer services. View monthly managed IT plans and per-hour technician rates — no hidden fees or lock-in contracts.',
+  openGraph: {
+    title: 'IT Services Pricing | Eagletek Visions',
+    description: 'Managed IT plans from $299/mo and on-demand technician rates — transparent pricing with no hidden fees or lock-in contracts.',
+  },
 }
 
 const plans = [

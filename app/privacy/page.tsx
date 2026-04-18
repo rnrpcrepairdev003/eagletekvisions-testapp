@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy – Eagletek Visions',
-  description: 'Privacy Policy for Eagletek Visions — how we collect, use, and protect your information in compliance with California law and CCPA.',
+  title: 'Privacy Policy | Eagletek Visions',
+  description: 'Eagletek Visions privacy policy — how we collect, use, and protect your personal information in compliance with California CCPA/CPRA requirements.',
+  robots: { index: false, follow: true },
 }
 
 const sections = [

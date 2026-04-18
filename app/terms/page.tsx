@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service – Eagletek Visions',
-  description: 'Terms of Service governing the use of Eagletek Visions IT consulting, managed IT, cybersecurity, and AI services.',
+  title: 'Terms of Service | Eagletek Visions',
+  description: 'Terms governing your use of Eagletek Visions services — managed IT, remote access authorisation, liability, payment terms, and the 90-day service guarantee.',
+  robots: { index: false, follow: true },
 }
 
 const lastUpdated = 'April 18, 2026'

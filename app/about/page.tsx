@@ -3,8 +3,12 @@ import Link from 'next/link'
 import Icon from '@/components/Icon'
 
 export const metadata: Metadata = {
-  title: 'About Us – Eagletek Visions',
-  description: 'Learn about Eagletek Visions — our mission, values, and the team behind our enterprise IT and AI consulting services.',
+  title: 'About Us | Certified IT Professionals in Palm Desert, CA',
+  description: 'Meet the team behind Eagletek Visions — certified IT professionals delivering managed IT, AI consulting, and cybersecurity to businesses across the Coachella Valley.',
+  openGraph: {
+    title: 'About Eagletek Visions | Certified IT & AI Consulting Team',
+    description: 'Certified IT professionals delivering managed IT, AI consulting, and cybersecurity to businesses in Palm Desert and the Coachella Valley.',
+  },
 }
 
 const values = [

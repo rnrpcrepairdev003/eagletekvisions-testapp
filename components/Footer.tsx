@@ -19,10 +19,10 @@ const quickLinks = [
 ]
 
 const knowledgeBase = [
-  { href: '/EV/business-it-support', label: 'Managed IT Services for Small Business: A Decision Guide' },
-  { href: '/EV/data-recovery', label: 'Data Recovery: How to Respond When You Lose Critical Files' },
-  { href: '/EV/password-recovery', label: 'Password Recovery & Account Access: What Your Options Are' },
-  { href: '/EV/network-setup', label: 'Home and Business Network Architecture: A Practical Guide' },
+  { href: '/EV/business-it-services', label: 'Managed IT Services for Small Business: A Decision Guide' },
+  { href: '/EV/data-loss-and-recovery', label: 'Data Loss & Recovery: How to Respond When You Lose Critical Files' },
+  { href: '/EV/account-access-recovery-guide', label: 'Account Access & Credential Recovery: What Your Options Are' },
+  { href: '/EV/network-deployment-and-security', label: 'Network Deployment & Security: A Practical Guide' },
 ]
 
 export default function Footer() {

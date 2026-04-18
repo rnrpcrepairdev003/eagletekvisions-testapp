@@ -3,8 +3,12 @@ import Link from 'next/link'
 import Icon from '@/components/Icon'
 
 export const metadata: Metadata = {
-  title: 'IT Services – Eagletek Visions',
-  description: 'Explore our full range of enterprise IT services: AI consulting, cloud solutions, cybersecurity, project management, API integration, and IT infrastructure.',
+  title: 'IT Services | AI Consulting, Cybersecurity & Cloud Solutions',
+  description: 'Enterprise IT services for growing businesses — managed IT, AI consulting, cloud migration, cybersecurity assessments, API integration, and IT infrastructure design. Palm Desert, CA.',
+  openGraph: {
+    title: 'IT Services | Eagletek Visions – Palm Desert, CA',
+    description: 'Managed IT, AI consulting, cloud migration, cybersecurity, and infrastructure design for businesses in the Coachella Valley and beyond.',
+  },
 }
 
 const services = [
@@ -46,9 +50,30 @@ const services = [
   },
 ]
 
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://eagletekvisions.com/services#professional-service',
+  name: 'Eagletek Visions IT Services',
+  provider: { '@id': 'https://eagletekvisions.com/#organization' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Enterprise IT Services',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.description,
+      },
+    })),
+  },
+}
+
 export default function ServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
       {/* ── DARK HERO ────────────────────────────────── */}
       <section className="hero-dark hero-grid relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e87c5a]/8 via-transparent to-transparent pointer-events-none" />
