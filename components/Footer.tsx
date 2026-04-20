@@ -55,7 +55,7 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <span className="text-[#d0d0d0] font-medium">Hours:</span> Mon–Sat 9AM–6PM
+                <span className="text-[#d0d0d0] font-medium">Address:</span> 77530 Enfield Ln Bldg H3, Palm Desert, CA 92211
               </p>
             </div>
           </div>

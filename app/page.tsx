@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Icon from '@/components/Icon'
+import ReviewsCarousel from '@/components/ReviewsCarousel'
 
 export const metadata: Metadata = {
   title: 'Managed IT Services & AI Consulting | Palm Desert, CA',
@@ -454,6 +455,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── REVIEWS ──────────────────────────────────── */}
+      <section className="py-24 bg-white border-y border-[#eeeeee] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-3">Client Reviews</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c]">What Our Clients Say</h2>
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-[#FBBC04]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                ))}
+              </div>
+              <span className="text-[#1c1c1c] font-bold">5.0</span>
+              <span className="text-[#888888] text-sm">· 28 reviews on Google</span>
+            </div>
+          </div>
+          <ReviewsCarousel />
+        </div>
+      </section>
+
       {/* ── PRICING ──────────────────────────────────── */}
       <section id="pricing" className="py-24 bg-white border-y border-[#eeeeee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -544,7 +565,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Palm Desert, CA — Coachella Valley</span>
+                  <span>77530 Enfield Ln Bldg H3, Palm Desert, CA 92211</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <svg className="w-4 h-4 text-[#e87c5a] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -8,6 +8,7 @@ const contactMethods = [
   { iconName: 'phone', title: 'Phone', detail: '(760) 469-9070', sub: 'Mon–Sat 9AM–6PM', href: 'tel:+17604699070' },
   { iconName: 'mail', title: 'Email', detail: 'support@eagletekvisions.com', sub: 'We reply within 2 business hours', href: 'mailto:support@eagletekvisions.com' },
   { iconName: 'chat', title: 'Remote Support', detail: 'Same-day sessions available', sub: 'Book online and connect in minutes', href: null },
+  { iconName: 'briefcase', title: 'Office', detail: '77530 Enfield Ln Bldg H3', sub: 'Palm Desert, CA 92211', href: null },
 ]
 
 const services = [

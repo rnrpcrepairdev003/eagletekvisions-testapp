@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'ProfessionalService',
   '@id': 'https://eagletekvisions.com/#organization',
   name: 'Eagletek Visions',
   url: 'https://eagletekvisions.com',
@@ -55,8 +55,10 @@ const organizationSchema = {
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '77530 Enfield Ln Bldg H3',
     addressLocality: 'Palm Desert',
     addressRegion: 'CA',
+    postalCode: '92211',
     addressCountry: 'US',
   },
   geo: {
