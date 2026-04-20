@@ -4,3 +4,385 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# ─────────────────────────────────────────────
+# CACHE HEADERS
+# ─────────────────────────────────────────────
+
+# Hashed JS/CSS/fonts from Next.js build — immutable forever
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Optimised images from Next.js image endpoint
+[[headers]]
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Logo — immutable (filename never changes)
+[[headers]]
+  for = "/logo.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Company video — cache 24h, serve stale for 7 days while revalidating
+[[headers]]
+  for = "/company-video.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# HTML pages — Netlify CDN caches 1 hour, browser always checks for fresh
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# ─────────────────────────────────────────────
+# 301 REDIRECTS — Old WordPress URLs → New Site
+# ─────────────────────────────────────────────
+
+# ── Homepage variants ──
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+# ── Contact page variants ──
+[[redirects]]
+  from = "/contact-2/"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/contact-3/"
+  to = "/contact"
+  status = 301
+
+# ── Services page variants ──
+[[redirects]]
+  from = "/services-page/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/services-page"
+  to = "/services"
+  status = 301
+
+# ── High-value managed IT pages → Services ──
+[[redirects]]
+  from = "/managed-it-services-for-palm-desert-businesses/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/managed-it-services-for-palm-desert-businesses"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/services/managed-it-services-for-palm-desert-businesses/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/co-managed-it-for-internal-it-teams/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/services/co-managed-it-for-internal-it-teams/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/web-app-solutions-for-businesses/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/services/web-app-solutions-for-business/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/websites/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/quickbooks/"
+  to = "/services"
+  status = 301
+
+# ── Microsoft 365 → Article ──
+[[redirects]]
+  from = "/microsoft-365-administration-security-in-palm-desert/"
+  to = "/EV/microsoft-365-for-business"
+  status = 301
+
+[[redirects]]
+  from = "/microsoft-365-administration-security-in-palm-desert"
+  to = "/EV/microsoft-365-for-business"
+  status = 301
+
+[[redirects]]
+  from = "/services/microsoft-365-administration-security/"
+  to = "/EV/microsoft-365-for-business"
+  status = 301
+
+# ── Cybersecurity → Article ──
+[[redirects]]
+  from = "/24-7-monitoring-managed-cybersecurity-with-meraki-fortinet-firewall-for-smbs/"
+  to = "/EV/business-cybersecurity-strategy"
+  status = 301
+
+[[redirects]]
+  from = "/services/managed-cybersecurity-24-7-monitoring-with-meraki-fortinet-firewall-for-smbs/"
+  to = "/EV/business-cybersecurity-strategy"
+  status = 301
+
+# ── Backup & Continuity → Article ──
+[[redirects]]
+  from = "/backup-business-it-continuity-for-regulated-smbs/"
+  to = "/EV/business-it-services"
+  status = 301
+
+[[redirects]]
+  from = "/services/backup-business-it-continuity-for-regulated-smbs/"
+  to = "/EV/business-it-services"
+  status = 301
+
+# ── Computer / Device pages → Articles ──
+[[redirects]]
+  from = "/computer-care/"
+  to = "/EV/workstation-diagnostics-and-repair"
+  status = 301
+
+[[redirects]]
+  from = "/computer-care"
+  to = "/EV/workstation-diagnostics-and-repair"
+  status = 301
+
+[[redirects]]
+  from = "/file-recovery/"
+  to = "/EV/data-loss-and-recovery"
+  status = 301
+
+[[redirects]]
+  from = "/file-recovery"
+  to = "/EV/data-loss-and-recovery"
+  status = 301
+
+[[redirects]]
+  from = "/phone-restoration/"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/phone-restoration"
+  to = "/contact"
+  status = 301
+
+# ── Terms ──
+[[redirects]]
+  from = "/terms-of-service-remote-access-authorization/"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/terms-of-service-remote-access-authorization"
+  to = "/terms"
+  status = 301
+
+# ── Blog / Articles ──
+[[redirects]]
+  from = "/blogs/"
+  to = "/EV/Articles"
+  status = 301
+
+[[redirects]]
+  from = "/blogs"
+  to = "/EV/Articles"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/*"
+  to = "/EV/Articles"
+  status = 301
+
+# ── SEO pages → Articles ──
+[[redirects]]
+  from = "/search-engine-optimization/"
+  to = "/EV/Articles"
+  status = 301
+
+[[redirects]]
+  from = "/search-engine-optimization/*"
+  to = "/EV/Articles"
+  status = 301
+
+# ── Industries (all) → Services ──
+[[redirects]]
+  from = "/industries-we-serve/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/industries-we-serve"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/industries/*"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/industries"
+  to = "/services"
+  status = 301
+
+# ─────────────────────────────────────────────
+# WordPress system pages → Home (zero SEO value)
+# ─────────────────────────────────────────────
+
+[[redirects]]
+  from = "/login/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/logout/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/register/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/resetpass/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/lostpassword/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/members/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/your-profile/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/groups/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/activate/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/activity/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio-2/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/demo-home-2/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/social_media2/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/facebook/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/twitter/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pinterest/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/hurryupjorge/"
+  to = "/"
+  status = 301
+
+# ─────────────────────────────────────────────
+# WordPress probe paths — block bot traffic
+# ─────────────────────────────────────────────
+
+[[redirects]]
+  from = "/wp-admin"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-login.php/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-json/*"
+  to = "/"
+  status = 301
