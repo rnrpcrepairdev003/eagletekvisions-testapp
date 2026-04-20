@@ -22,11 +22,11 @@ export default function EagleMascot() {
   return (
     <div
       ref={ref}
-      className="absolute right-0 bottom-0 w-[520px] xl:w-[640px] h-[520px] xl:h-[640px] pointer-events-none select-none"
+      className="hidden lg:block absolute right-0 bottom-0 w-[520px] xl:w-[640px] h-[520px] xl:h-[640px] pointer-events-none select-none"
       style={{ willChange: 'transform' }}
     >
       <Image
-        src="/eagle-mascot.png"
+        src="/eagle-mascot.webp"
         alt="Eagletek Visions mascot"
         fill
         className="object-contain object-right-bottom drop-shadow-2xl"

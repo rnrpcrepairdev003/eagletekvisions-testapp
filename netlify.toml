@@ -28,7 +28,7 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/eagle-mascot.png"
+  for = "/eagle-mascot.webp"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

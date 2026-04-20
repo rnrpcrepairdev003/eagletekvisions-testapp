@@ -36,7 +36,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/eagle-mascot.png',
+        source: '/eagle-mascot.webp',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
