@@ -277,7 +277,7 @@ export default function HomePage() {
                 price: 150,
               },
             ].map((tier) => (
-              <div key={tier.name} className="flex flex-col">
+              <div key={tier.name} className={`flex flex-col ${tier.highlight ? 'border-x border-[#e87c5a]/40' : ''}`}>
                 <div className={`px-8 py-5 text-center ${tier.highlight ? 'bg-[#e87c5a]' : 'bg-[#1c1c1c]'}`}>
                   {tier.highlight && (
                     <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Most Requested</p>
