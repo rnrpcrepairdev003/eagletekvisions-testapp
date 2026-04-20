@@ -36,6 +36,12 @@ const nextConfig = {
         ],
       },
       {
+        source: '/eagle-mascot.png',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
         source: '/company-video.mp4',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' },

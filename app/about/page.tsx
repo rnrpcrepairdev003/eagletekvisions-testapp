@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Icon from '@/components/Icon'
+import EagleMascot from '@/components/EagleMascot'
 
 export const metadata: Metadata = {
   title: 'About Us | Certified IT Professionals in Palm Desert, CA',
@@ -30,10 +31,12 @@ export default function AboutPage() {
   return (
     <>
       {/* ── DARK HERO ────────────────────────────────── */}
-      <section className="hero-dark hero-grid relative overflow-hidden">
+      <section className="hero-dark hero-grid relative overflow-hidden min-h-[480px]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e87c5a]/8 via-transparent to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative">
-          <div className="max-w-3xl">
+        {/* Eagle — large, absolute right, parallax via client component */}
+        <EagleMascot />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 relative z-10">
+          <div className="max-w-xl">
             <p className="text-[#e87c5a] text-sm font-semibold uppercase tracking-widest mb-4">About Us</p>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
               Technology Partners You Can Trust
@@ -122,18 +125,20 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { title: 'Hardware & Software Troubleshooting', description: 'Diagnosing and resolving hardware failures, OS issues, driver conflicts, and application errors across Windows, macOS, and Linux environments.' },
-              { title: 'Network Setup & Architecture', description: 'Designing and deploying wired and wireless networks for home offices and business premises — including VLANs, firewalls, and secure Wi-Fi infrastructure.' },
-              { title: 'Desktop IT Management', description: 'Endpoint provisioning, imaging, patch management, user account administration, and day-to-day desktop support for business workforces.' },
-              { title: 'Server Infrastructure', description: 'On-premise and hybrid server deployment, Active Directory, virtualisation (VMware, Hyper-V), and ongoing server administration and monitoring.' },
-              { title: 'Network Storage & Backup', description: 'NAS deployment, cloud backup configuration (Backblaze, Azure, AWS S3), disaster recovery planning, and automated backup verification.' },
-              { title: 'Email & Collaboration Platforms', description: 'Microsoft 365 and Google Workspace setup, migration, administration, and security hardening — including email filtering and DLP policies.' },
-              { title: 'Printer & Peripheral Management', description: 'Network printer configuration, fleet management, driver deployment, and multifunction device integration with business workflows.' },
-              { title: 'Data Recovery & Continuity', description: 'Recovering data from failed drives and corrupted volumes, restoring from backups, and implementing continuity plans to prevent future data loss.' },
-              { title: 'Remote Workforce Infrastructure', description: 'Designing and deploying secure remote work environments — VPN architecture, endpoint management, cloud access policies, and productivity platform configuration for distributed teams.' },
+              { iconName: 'monitor',   title: 'Hardware & Software Troubleshooting', description: 'Diagnosing and resolving hardware failures, OS issues, driver conflicts, and application errors across Windows, macOS, and Linux environments.' },
+              { iconName: 'wifi',      title: 'Network Setup & Architecture', description: 'Designing and deploying wired and wireless networks for home offices and business premises — including VLANs, firewalls, and secure Wi-Fi infrastructure.' },
+              { iconName: 'laptop',    title: 'Desktop IT Management', description: 'Endpoint provisioning, imaging, patch management, user account administration, and day-to-day desktop support for business workforces.' },
+              { iconName: 'server',    title: 'Server Infrastructure', description: 'On-premise and hybrid server deployment, Active Directory, virtualisation (VMware, Hyper-V), and ongoing server administration and monitoring.' },
+              { iconName: 'database',  title: 'Network Storage & Backup', description: 'NAS deployment, cloud backup configuration (Backblaze, Azure, AWS S3), disaster recovery planning, and automated backup verification.' },
+              { iconName: 'mail',      title: 'Email & Collaboration Platforms', description: 'Microsoft 365 and Google Workspace setup, migration, administration, and security hardening — including email filtering and DLP policies.' },
+              { iconName: 'cpu',       title: 'Printer & Peripheral Management', description: 'Network printer configuration, fleet management, driver deployment, and multifunction device integration with business workflows.' },
+              { iconName: 'refresh',   title: 'Data Recovery & Continuity', description: 'Recovering data from failed drives and corrupted volumes, restoring from backups, and implementing continuity plans to prevent future data loss.' },
+              { iconName: 'remote',    title: 'Remote Workforce Infrastructure', description: 'Designing and deploying secure remote work environments — VPN architecture, endpoint management, cloud access policies, and productivity platform configuration for distributed teams.' },
             ].map((area) => (
               <div key={area.title} className="bg-[#f7f7f7] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
-                <div className="w-2 h-2 rounded-full bg-[#e87c5a] mb-4" />
+                <div className="w-10 h-10 bg-[#e87c5a]/10 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name={area.iconName} className="w-5 h-5 text-[#e87c5a]" />
+                </div>
                 <h3 className="text-[#1c1c1c] font-bold text-sm mb-2">{area.title}</h3>
                 <p className="text-[#666666] text-sm leading-relaxed">{area.description}</p>
               </div>
