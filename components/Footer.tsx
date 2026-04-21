@@ -33,12 +33,8 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <Image src="/logo.png" alt="Eagletek Visions" width={38} height={38} className="rounded-sm" />
-              <div className="leading-none">
-                <span className="font-extrabold text-white text-base tracking-wide">EAGLETEK</span>
-                <span className="font-light text-[#e87c5a] text-base tracking-widest ml-1">VISIONS</span>
-              </div>
+            <Link href="/">
+              <Image src="/Website-logo.webp" alt="Eagletek Visions" width={110} height={42} className="object-contain" />
             </Link>
             <p className="text-[#aaaaaa] text-sm leading-relaxed">
               Elevating businesses through intelligent technology. Enterprise IT solutions, AI consulting, and advanced cybersecurity — built for growth.

@@ -35,12 +35,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Image src="/logo.png" alt="Eagletek Visions" width={38} height={38} className="rounded-sm" />
-            <div className="leading-none">
-              <span className="font-extrabold text-white text-base tracking-wide">EAGLETEK</span>
-              <span className="font-light text-[#e87c5a] text-base tracking-widest ml-1">VISIONS</span>
-            </div>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image src="/Website-logo.webp" alt="Eagletek Visions" width={110} height={42} className="object-contain" />
           </Link>
 
           {/* Desktop links */}
