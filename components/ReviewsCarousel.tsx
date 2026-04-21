@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react'
 
 const reviews = [
-  { name: 'Rebeca Santana', time: '1 month ago', text: 'Great service, affordable prices and attentive customer care. Came for a computer repair and turnaround was fast! 10/10 recommend.' },
   { name: 'Tiffany Langell', time: '1 year ago', text: 'Joshua and his team have automated a ton of our processes. Our business almost feels like it is on Auto Pilot. Their developers are definitely top notch.' },
   { name: 'Michael Sanders', time: '1 year ago', text: 'Our business has skyrocketed in traffic and getting calls. We were presented multiple package options and the investment is worth it.' },
   { name: 'William Jenkins', time: '1 year ago', text: 'We needed to find an expert in SEO and Google Ads. These guys are your go-to for all online marketing needs. Happy with the results.' },
