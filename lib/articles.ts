@@ -1014,6 +1014,95 @@ const articles: Article[] = [
       { title: 'How Hackers Attack Small Businesses (And How to Stop Them)', youtubeId: 'aO858HyFbKI', channel: 'NetworkChuck' },
     ],
   },
+
+  // ── B2B ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'disaster-recovery-planning',
+    title: 'Disaster Recovery & Business Continuity Planning: A Guide for Small Business Owners',
+    badge: 'Business Continuity',
+    metaDescription: 'A practical guide to disaster recovery and business continuity planning for small businesses — covering RTO, RPO, backup strategy, and how to build a plan that actually works when you need it.',
+    excerpt: 'Most small businesses have no tested recovery plan. This guide explains RTO, RPO, backup architecture, and what a continuity plan needs to include to protect your operations.',
+    icon: 'refresh',
+    coverImage: 'https://images.unsplash.com/photo-1731458769726-cef60c792665?auto=format&fit=crop&w=1200&q=80',
+    inlineImages: [
+      { afterSection: 0, src: 'https://images.unsplash.com/photo-1761252986951-11d227af28ae?auto=format&fit=crop&w=1200&q=80', alt: 'Flooded street showing the kind of physical disruption a business continuity plan prepares for' },
+      { afterSection: 2, src: 'https://images.unsplash.com/photo-1759984782117-4f333f6efe50?auto=format&fit=crop&w=1200&q=80', alt: 'Person connecting an external hard drive — a key component of a layered backup strategy' },
+    ],
+    pricing: 'Custom quote',
+    whatsIncluded: [
+      'Business impact analysis (BIA)',
+      'RTO and RPO definition per system',
+      'Backup architecture design and deployment',
+      'Offsite and immutable cloud backup configuration',
+      'Recovery runbook documentation',
+      'Annual DR test and written report',
+    ],
+    intro: 'Every business faces events that can interrupt or destroy normal operations — ransomware, hardware failure, fire, flood, power outage, or a key employee leaving without notice. What separates businesses that recover quickly from those that don\'t is not luck: it is preparation. A disaster recovery and business continuity plan defines exactly what happens when things go wrong, who does what, and how fast the business returns to normal. For most small businesses, that plan either doesn\'t exist or has never been tested.',
+    sections: [
+      {
+        heading: 'Why Small Businesses Are More Vulnerable Than They Think',
+        paragraphs: [
+          'According to FEMA, approximately 40% of businesses do not reopen after a disaster, and another 25% close within a year. The primary cause is not the disaster itself — it is the absence of a plan. Large enterprises invest heavily in business continuity programmes because they have experienced the alternative. Small businesses, which have less financial cushion to absorb disruption, paradoxically tend to be the least prepared.',
+          'The threat landscape has also expanded significantly. Ransomware attacks on small and medium businesses increased sharply through 2023 and 2024. The 2024 Verizon Data Breach Investigations Report found that ransomware or extortion was involved in approximately one-third of all breaches, with small businesses disproportionately targeted. A successful ransomware attack can encrypt every file on every connected device in minutes — including local backups that were not properly isolated.',
+          'Natural disasters remain a significant risk, particularly for businesses in regions prone to extreme heat, wildfire, or flooding. Physical infrastructure — servers, workstations, networking equipment — can be destroyed or rendered inaccessible. Without offsite or cloud-based backup, the data on that infrastructure may be unrecoverable. In the Coachella Valley, heat-related equipment failure and power outages during peak summer months are a consistent operational risk that local businesses must plan for specifically.',
+        ],
+        tips: [
+          'List the three events most likely to disrupt your business — ransomware, hardware failure, and extended power outage are the top three for most SMBs',
+          'Identify which systems, if unavailable for 24 hours, would stop your business from generating revenue — these are your recovery priorities',
+          'Check whether your cyber insurance policy covers ransomware recovery costs, business interruption, and data reconstruction — many policies have exclusions that are not obvious at purchase',
+        ],
+      },
+      {
+        heading: 'RTO and RPO: The Two Numbers That Define Your Recovery Plan',
+        paragraphs: [
+          'Every disaster recovery plan is built around two key metrics: Recovery Time Objective (RTO) and Recovery Point Objective (RPO). RTO defines the maximum acceptable length of time a system can be unavailable before it causes unacceptable business impact. RPO defines the maximum acceptable amount of data loss, measured in time — for example, an RPO of four hours means you are willing to accept losing up to four hours of data if a failure occurs.',
+          'These numbers are not arbitrary. They are derived from a business impact analysis (BIA) — a structured process of identifying which systems and data are critical, what the cost of their unavailability is per hour, and what the business actually needs to operate at minimum viable capacity. A law firm may have an RTO of four hours for its document management system. A retail business may have an RTO of one hour for its point-of-sale system. The numbers vary by system and by business.',
+          'Once RTO and RPO are defined, they drive every other decision in the recovery plan: how frequently backups run, where they are stored, what redundancy is built into critical systems, and what level of cloud failover capability is appropriate. Without defined RTO and RPO, backup and recovery decisions are made by guesswork — and the plan fails when it is actually needed.',
+        ],
+        tips: [
+          'Define separate RTO and RPO values for each critical system — your email, accounting software, and file storage may have very different tolerance levels',
+          'A one-hour RPO typically requires continuous or near-continuous backup; a 24-hour RPO can be met with nightly scheduled backups — the difference in cost is significant',
+          'Document your RTO and RPO values in writing and review them annually — business growth and new software dependencies change what is critical',
+        ],
+      },
+      {
+        heading: 'Building Your Business Continuity Plan: The Four Essential Layers',
+        paragraphs: [
+          'An effective BCP is built from four overlapping layers. The first is data protection: a 3-2-1 backup strategy — three copies of data, on two different media types, with one copy stored off-site or in an immutable cloud backup. Immutability means the backup cannot be altered or deleted, even by ransomware or a compromised administrator account. Veeam, Acronis, and Datto are among the enterprise-grade platforms used for immutable backup.',
+          'The second layer is system redundancy. For critical systems, this means ensuring an alternative is available when the primary fails. For a small business, this might mean a cloud-hosted failover for a key application, a UPS (uninterruptible power supply) and generator for on-site equipment, or a spare workstation configured to take over from a failed primary. Redundancy decisions should be proportional to the RTO for each system.',
+          'The third layer is the communication and response plan: a documented procedure that defines who is notified when an incident occurs, who is authorised to make recovery decisions, how customers and vendors are communicated with, and what the escalation path looks like. The fourth layer is regular testing — a recovery plan that has never been tested is not a recovery plan. DR tests should include actual restoration from backup, not just a verification that backups completed successfully.',
+        ],
+        tips: [
+          'The 3-2-1 backup rule is a minimum — 3-2-1-1 adds a fourth copy that is air-gapped (not connected to any network), which is the only backup ransomware cannot reach',
+          'A UPS protects against short power interruptions and gives systems time to shut down gracefully; it does not replace a generator for extended outages',
+          'Write your communication plan before you need it — decide in advance how you will notify clients of downtime, who sends the message, and what it will say',
+        ],
+      },
+      {
+        heading: 'Testing, Maintaining, and Improving Your DR Plan',
+        paragraphs: [
+          'A disaster recovery plan is only as reliable as its last successful test. Most small businesses that believe they have a backup discover during an actual recovery event that the backup is incomplete, the restoration process takes far longer than expected, or critical systems were never included in the backup scope. A regular testing cadence — at minimum annually, and ideally quarterly for critical systems — eliminates these surprises before they become crises.',
+          'Testing takes several forms. A tabletop exercise walks stakeholders through a simulated incident scenario to verify the communication plan and decision-making process without involving technical systems. A technical restoration test involves actually restoring data and systems from backup in a controlled environment and measuring how long it takes against your defined RTO. A full failover test, for businesses with redundant infrastructure, verifies that secondary systems actually take over correctly.',
+          'Plans become outdated quickly. Staff turnover, new software, cloud migrations, and business growth all change the recovery requirements. Assign a specific owner for the DR plan — someone responsible for keeping it current, scheduling tests, and ensuring that new systems are incorporated into the backup scope when they are deployed. A plan that is reviewed and updated annually will perform very differently from one that was written three years ago and never revisited.',
+        ],
+        tips: [
+          'After any significant IT change — new server, new software, cloud migration — verify that the new system is included in the backup scope before relying on it for business-critical work',
+          'Document recovery time from your last actual restoration test — if it took 18 hours to restore but your RTO is 4 hours, that gap needs to be closed before a real incident occurs',
+          'Engage your IT provider or MSP to conduct an annual DR test and provide a written report — this also satisfies the documentation requirement for most cyber insurance policies',
+        ],
+      },
+    ],
+    sources: [
+      { label: 'FEMA — Protecting Business Continuity', url: 'https://www.fema.gov/emergency-managers/business-preparedness' },
+      { label: 'NIST SP 800-34 — Contingency Planning Guide for Federal Information Systems', url: 'https://csrc.nist.gov/publications/detail/sp/800-34/rev-1/final' },
+      { label: 'Verizon — 2024 Data Breach Investigations Report', url: 'https://www.verizon.com/business/resources/reports/dbir/' },
+      { label: 'SBA — Business Continuity Planning', url: 'https://www.sba.gov/business-guide/manage-your-business/prepare-emergencies' },
+    ],
+    videos: [
+      { title: 'What is Business Continuity and Disaster Recovery Planning?', youtubeId: 'o0xj1JKjjOE', channel: 'CBT Nuggets' },
+      { title: 'Business Continuity Planning for SMEs: How to Prepare for Disasters', youtubeId: '_aci49uFHvQ', channel: 'UNDRR' },
+    ],
+  },
 ]
 
 export function getArticleBySlug(slug: string): Article | undefined {
