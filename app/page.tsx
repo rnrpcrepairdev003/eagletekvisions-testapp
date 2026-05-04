@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Icon from '@/components/Icon'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
+import CompanyVideo from '@/components/CompanyVideo'
 
 export const metadata: Metadata = {
   title: 'Managed IT Services & AI Consulting | Palm Desert, CA',
@@ -46,7 +47,7 @@ const plans = [
     period: '/mo',
     description: 'For small businesses and sole operators who need reliable IT oversight without the overhead.',
     highlight: false,
-    features: ['Up to 5 users', 'Business-hours helpdesk', 'Endpoint monitoring & management', 'Monthly security patch cycle', 'Email and priority chat support', '4-hour response SLA'],
+    features: ['Up to 5 users', 'Business-hours IT desk', 'Endpoint monitoring & management', 'Monthly security patch cycle', 'Email and priority chat access', '4-hour response SLA'],
     cta: 'Get Started',
   },
   {
@@ -55,7 +56,7 @@ const plans = [
     period: '/mo per user',
     description: 'For growing organisations that need proactive IT management and a dedicated technical resource.',
     highlight: true,
-    features: ['5–25 users', 'Remote and on-site helpdesk', 'Proactive monitoring and alerting', 'Security patching and compliance updates', 'Microsoft 365 / Google Workspace admin', '2-hour response SLA', 'Monthly IT health report', 'Dedicated account technician'],
+    features: ['5–25 users', 'Remote and on-site IT services', 'Proactive monitoring and alerting', 'Security patching and compliance updates', 'Microsoft 365 / Google Workspace admin', '2-hour response SLA', 'Monthly IT health report', 'Dedicated account technician'],
     cta: 'Start Free Trial',
   },
   {
@@ -64,7 +65,7 @@ const plans = [
     period: '',
     description: 'Fully managed IT for larger organisations with complex infrastructure and compliance requirements.',
     highlight: false,
-    features: ['Unlimited users', '24/7 helpdesk and infrastructure monitoring', 'On-site and remote support', 'Custom SLA agreements', 'vCIO strategic advisory', 'Compliance programme management (SOC 2, HIPAA, NIST)', 'Disaster recovery and business continuity planning', 'Dedicated engineering team'],
+    features: ['Unlimited users', '24/7 IT monitoring and infrastructure management', 'On-site and remote IT services', 'Custom SLA agreements', 'vCIO strategic advisory', 'Compliance programme management (SOC 2, HIPAA, NIST)', 'Disaster recovery and business continuity planning', 'Dedicated engineering team'],
     cta: 'Contact Sales',
   },
 ]
@@ -100,20 +101,14 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {/* ── HERO WITH VIDEO ──────────────────────────── */}
-      <section className="relative overflow-hidden bg-black">
+      <section className="relative overflow-hidden bg-black" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '48px 48px' }}>
 
-        {/* Background video */}
-        <video
-          src="/company-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
+        {/* Orbs */}
+        <div className="absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: '#F97316', filter: 'blur(100px)', opacity: 0.28 }} />
+        <div className="absolute -bottom-24 -right-16 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: '#EC4899', filter: 'blur(100px)', opacity: 0.28 }} />
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
         {/* Hero content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-36 text-center">
@@ -451,6 +446,32 @@ export default function HomePage() {
                 <p className="text-[#666666] text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPANY VIDEO ────────────────────────────── */}
+      <section className="py-24 bg-[#0d0d0d] border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center">
+
+            {/* Left: copy */}
+            <div>
+              <p className="text-[#e87c5a] text-xs font-bold uppercase tracking-widest mb-4">Who We Are</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-5">
+                We Build It.<br />We Secure It.<br />We Scale It.
+              </h2>
+              <p className="text-[#666666] text-sm leading-relaxed mb-8">
+                Infrastructure, cloud, cybersecurity, and AI — handled entirely in-house by our certified engineers. No outsourcing, no middlemen.
+              </p>
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#e87c5a] hover:bg-[#d06848] text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm">
+                Schedule a Free Consultation
+              </Link>
+            </div>
+
+            {/* Right: video */}
+            <CompanyVideo />
+
           </div>
         </div>
       </section>
